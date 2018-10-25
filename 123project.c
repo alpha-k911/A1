@@ -3,64 +3,98 @@
 
 //testing
 
-struct date
-{
-	int d,m,y;
-};
-
 struct grounds{
 
 	char gName[100];
 	char city[50];
 	char state[50];
+	struct sports S[10];
+	int noOfSports;
 	//char games[10][30];
-	char date_time[10];
+	//char date_time[10];
 	//char time[10][5];
-	struct date D[1];
-	char rate[10];
-	char sport[50];
-}temp;
+	//struct date D[1];
+	//char rate[10];
+	//char sport[50];
+}temp,G[100];
+
+struct date
+{
+	int d,m,y;
+};
+
+struct time
+{
+	int h,m;
+};
+
+struct sports
+{
+	char name[50];
+	struct date d[2];
+	struct date s_d[1];
+	struct time[2];
+	int rate;
+}tempS;
+
 
 int total=8;
 int main()
 {
 	int i;
-   	struct grounds G[100];
-	struct grounds temp;
-    	
-	strcpy(G[0].gName,"rajiv");
+   	strcpy(G[0].gName,"rajiv");
 	strcpy(G[0].city,"jaipur");
 	strcpy(G[0].state,"rajasthan");
-	strcpy(G[0].sport,"cricket");
-	strcpy(G[1].gName,"rajiv");
-	strcpy(G[1].city,"jaipur");
-	strcpy(G[1].state,"rajasthan");
-	strcpy(G[1].sport,"football");
-	strcpy(G[2].gName,"sms");
-	strcpy(G[2].city,"nagpur");
-	strcpy(G[2].state,"maharashtra");
-	strcpy(G[2].sport,"cricket");
-	strcpy(G[3].gName,"sms");
-	strcpy(G[3].city,"nagpur");
-	strcpy(G[3].state,"maharashtra");
-	strcpy(G[3].sport,"swimming");
-	strcpy(G[4].gName,"jntu");
-	strcpy(G[4].city,"hyderabad");
-	strcpy(G[4].state,"telangana");
-	strcpy(G[4].sport,"badminton");
-	strcpy(G[5].gName,"kcr");
-	strcpy(G[5].city,"hyderabad");
-	strcpy(G[5].state,"telangana");
-	strcpy(G[5].sport,"cricket");
-	strcpy(G[6].gName,"jntu");
-	strcpy(G[6].city,"hyderabad");
-	strcpy(G[6].state,"telangana");
-	strcpy(G[6].sport,"cricket");
-	strcpy(G[7].gName,"rajiv");
-	strcpy(G[7].city,"indore");
-	strcpy(G[7].state,"maharashtra");
-	strcpy(G[7].sport,"tennis");	
-	for(i=8;i<100;i++)	
+	strcpy(G[0].S[0].name,"cricket");
+	strcpy(G[0].S[1].name,"football");
+	strcpy(G[0].S[2].name,"hockey");
+	G[0].noOfSports=3;
+	
+	
+	
+	strcpy(G[1].gName,"sms");
+	strcpy(G[1].city,"nagpur");
+	strcpy(G[1].state,"maharashtra");
+	strcpy(G[1].S[0].name,"cricket");
+	strcpy(G[1].S[1].name,"swimming");
+	G[1].noOfSports=2;
+	
+	
+	
+	strcpy(G[2].gName,"jntu");
+	strcpy(G[2].city,"hyderabad");
+	strcpy(G[2].state,"telangana");
+	strcpy(G[2].S[0].name,"badminton");
+	G[2].noOfSports=1;
+	
+	
+	
+	strcpy(G[3].gName,"kcr");
+	strcpy(G[3].city,"hyderabad");
+	strcpy(G[3].state,"telangana");
+	strcpy(G[3].S[0].name,"cricket");
+	strcpy(G[3].S[1].name,"swimming");
+	G[3].noOfSports=2;
+	
+	
+	
+	strcpy(G[4].gName,"gandhi");
+	strcpy(G[4].city,"delhi");
+	strcpy(G[4].state,"new_delhi");
+	strcpy(G[4].S[0].name,"cricket");
+	strcpy(G[4].S[1].name,"football");
+	strcpy(G[4].S[2].name,"swimming");
+	G[4].noOfSports=3;
+	
+	
+	
+	strcpy(G[5].gName,"rajiv_gandhi");
+	strcpy(G[5].city,"indore");
+	strcpy(G[5].state,"maharashtra");
+	strcpy(G[5].S[0].name,"tennis");
+	strcpy(G[5].S[1].name,"football");
+	G[5].noOfSports=2;	
+	for(i=6;i<100;i++)	
 	strcpy(G[i].gName,"null");
 
 	initialSort(G,8);
