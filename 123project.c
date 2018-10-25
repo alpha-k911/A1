@@ -31,7 +31,7 @@ struct time
 struct sports
 {
 	char name[50];
-	struct date d[2];
+	struct date dt[2];
 	struct date s_d[1];
 	struct time[2];
 	int rate;
@@ -49,7 +49,48 @@ int main()
 	strcpy(G[0].S[1].name,"football");
 	strcpy(G[0].S[2].name,"hockey");
 	G[0].noOfSports=3;
+	G[0].S[0].dt.d="";
+	G[0].S[0].dt.m="";
+	G[0].S[0].dt.y="";
+	G[0].S[1].dt.d="";
+	G[0].S[1].dt.m="";
+	G[0].S[1].dt.y="";
+	G[0].S[2].dt.d="";
+	G[0].S[2].dt.m="";
+	G[0].S[2].dt.y="";
 	
+	G[0].S[0].dt.d="";
+	G[0].S[0].dt.m="";
+	G[0].S[0].dt.y="";
+	G[0].S[1].dt.d="";
+	G[0].S[1].dt.m="";
+	G[0].S[1].dt.y="";
+	G[0].S[2].dt.d="";
+	G[0].S[2].dt.m="";
+	G[0].S[2].dt.y="";
+	
+	G[0].S[0].dt.d="";
+	G[0].S[0].dt.m="";
+	G[0].S[0].dt.y="";
+	G[0].S[1].dt.d="";
+	G[0].S[1].dt.m="";
+	G[0].S[1].dt.y="";
+	G[0].S[2].dt.d="";
+	G[0].S[2].dt.m="";
+	G[0].S[2].dt.y="";
+	
+	G[0].S[0].time[0].h=;
+	G[0].S[0].time[0].m=;
+	G[0].S[0].time[1].h=;
+	G[0].S[0].time[1].m=;
+	G[0].S[1].time[0].h=;
+	G[0].S[1].time[0].m=;
+	G[0].S[1].time[1].h=;
+	G[0].S[1].time[1].m=;
+	G[0].S[2].time[0].h=;
+	G[0].S[2].time[0].m=;
+	G[0].S[2].time[1].h=;
+	G[0].S[2].time[1].m=;
 	
 	
 	strcpy(G[1].gName,"sms");
@@ -58,6 +99,35 @@ int main()
 	strcpy(G[1].S[0].name,"cricket");
 	strcpy(G[1].S[1].name,"swimming");
 	G[1].noOfSports=2;
+	G[1].S[0].dt.d="";
+	G[1].S[0].dt.m="";
+	G[1].S[0].dt.y="";
+	G[1].S[1].dt.d="";
+	G[1].S[1].dt.m="";
+	G[1].S[1].dt.y="";
+	
+	G[1].S[0].dt.d="";
+	G[1].S[0].dt.m="";
+	G[1].S[0].dt.y="";
+	G[1].S[1].dt.d="";
+	G[1].S[1].dt.m="";
+	G[1].S[1].dt.y="";
+	
+	G[1].S[0].dt.d="";
+	G[1].S[0].dt.m="";
+	G[1].S[0].dt.y="";
+	G[1].S[1].dt.d="";
+	G[1].S[1].dt.m="";
+	G[1].S[1].dt.y="";
+	
+	G[0].S[0].time[0].h=;
+	G[0].S[0].time[0].m=;
+	G[0].S[0].time[1].h=;
+	G[0].S[0].time[1].m=;
+	G[0].S[1].time[0].h=;
+	G[0].S[1].time[0].m=;
+	G[0].S[1].time[1].h=;
+	G[0].S[1].time[1].m=;
 	
 	
 	
@@ -66,6 +136,22 @@ int main()
 	strcpy(G[2].state,"telangana");
 	strcpy(G[2].S[0].name,"badminton");
 	G[2].noOfSports=1;
+	G[2].S[0].dt.d="";
+	G[2].S[0].dt.m="";
+	G[2].S[0].dt.y="";
+	
+	G[2].S[0].dt.d="";
+	G[2].S[0].dt.m="";
+	G[2].S[0].dt.y="";
+	
+	G[2].S[0].dt.d="";
+	G[2].S[0].dt.m="";
+	G[2].S[0].dt.y="";
+	
+	G[0].S[0].time[0].h=;
+	G[0].S[0].time[0].m=;
+	G[0].S[0].time[1].h=;
+	G[0].S[0].time[1].m=;
 	
 	
 	
@@ -75,6 +161,36 @@ int main()
 	strcpy(G[3].S[0].name,"cricket");
 	strcpy(G[3].S[1].name,"swimming");
 	G[3].noOfSports=2;
+	G[3].S[0].dt.d="";
+	G[3].S[0].dt.m="";
+	G[3].S[0].dt.y="";
+	G[3].S[1].dt.d="";
+	G[3].S[1].dt.m="";
+	G[3].S[1].dt.y="";
+	
+	G[3].S[0].dt.d="";
+	G[3].S[0].dt.m="";
+	G[3].S[0].dt.y="";
+	G[3].S[1].dt.d="";
+	G[3].S[1].dt.m="";
+	G[3].S[1].dt.y="";
+	
+	G[3].S[0].dt.d="";
+	G[3].S[0].dt.m="";
+	G[3].S[0].dt.y="";
+	G[3].S[1].dt.d="";
+	G[3].S[1].dt.m="";
+	G[3].S[1].dt.y="";
+	
+	G[0].S[0].time[0].h=;
+	G[0].S[0].time[0].m=;
+	G[0].S[0].time[1].h=;
+	G[0].S[0].time[1].m=;
+	G[0].S[1].time[0].h=;
+	G[0].S[1].time[0].m=;
+	G[0].S[1].time[1].h=;
+	G[0].S[1].time[1].m=;
+	
 	
 	
 	
@@ -85,6 +201,49 @@ int main()
 	strcpy(G[4].S[1].name,"football");
 	strcpy(G[4].S[2].name,"swimming");
 	G[4].noOfSports=3;
+	G[4].S[0].dt.d="";
+	G[4].S[0].dt.m="";
+	G[4].S[0].dt.y="";
+	G[4].S[1].dt.d="";
+	G[4].S[1].dt.m="";
+	G[4].S[1].dt.y="";
+	G[4].S[2].dt.d="";
+	G[4].S[2].dt.m="";
+	G[4].S[2].dt.y="";
+	
+	G[4].S[0].dt.d="";
+	G[4].S[0].dt.m="";
+	G[4].S[0].dt.y="";
+	G[4].S[1].dt.d="";
+	G[4].S[1].dt.m="";
+	G[4].S[1].dt.y="";
+	G[4].S[2].dt.d="";
+	G[4].S[2].dt.m="";
+	G[4].S[2].dt.y="";
+	
+	G[4].S[0].dt.d="";
+	G[4].S[0].dt.m="";
+	G[4].S[0].dt.y="";
+	G[4].S[1].dt.d="";
+	G[4].S[1].dt.m="";
+	G[4].S[1].dt.y="";
+	G[4].S[2].dt.d="";
+	G[4].S[2].dt.m="";
+	G[4].S[2].dt.y="";
+	
+	G[0].S[0].time[0].h=;
+	G[0].S[0].time[0].m=;
+	G[0].S[0].time[1].h=;
+	G[0].S[0].time[1].m=;
+	G[0].S[1].time[0].h=;
+	G[0].S[1].time[0].m=;
+	G[0].S[1].time[1].h=;
+	G[0].S[1].time[1].m=;
+	G[0].S[2].time[0].h=;
+	G[0].S[2].time[0].m=;
+	G[0].S[2].time[1].h=;
+	G[0].S[2].time[1].m=;
+	
 	
 	
 	
@@ -93,7 +252,38 @@ int main()
 	strcpy(G[5].state,"maharashtra");
 	strcpy(G[5].S[0].name,"tennis");
 	strcpy(G[5].S[1].name,"football");
-	G[5].noOfSports=2;	
+	G[5].noOfSports=2;
+	G[5].S[0].dt.d="";
+	G[5].S[0].dt.m="";
+	G[5].S[0].dt.y="";
+	G[5].S[1].dt.d="";
+	G[5].S[1].dt.m="";
+	G[5].S[1].dt.y="";
+	
+	G[5].S[0].dt.d="";
+	G[5].S[0].dt.m="";
+	G[5].S[0].dt.y="";
+	G[5].S[1].dt.d="";
+	G[5].S[1].dt.m="";
+	G[5].S[1].dt.y="";
+	
+	G[5].S[0].dt.d="";
+	G[5].S[0].dt.m="";
+	G[5].S[0].dt.y="";
+	G[5].S[1].dt.d="";
+	G[5].S[1].dt.m="";
+	G[5].S[1].dt.y="";
+	
+	G[0].S[0].time[0].h=;
+	G[0].S[0].time[0].m=;
+	G[0].S[0].time[1].h=;
+	G[0].S[0].time[1].m=;
+	G[0].S[1].time[0].h=;
+	G[0].S[1].time[0].m=;
+	G[0].S[1].time[1].h=;
+	G[0].S[1].time[1].m=;
+	
+		
 	for(i=6;i<100;i++)	
 	strcpy(G[i].gName,"null");
 
