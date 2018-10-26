@@ -48,6 +48,7 @@ int total=8,size=100,c=0;
 int main()
 {
 	int i,j;
+	char city[10];
    	strcpy(G[0].gName,"rajiv");
 	strcpy(G[0].city,"jaipur");
 	strcpy(G[0].state,"rajasthan");
@@ -92,15 +93,15 @@ int main()
 	//G[0].S[2].dt[1].m=1;
 	//G[0].S[2].dt[1].y=1;
 	
-	G[0].S[0].s_d[0].d=1;
-	G[0].S[0].s_d[0].m=1;
-	G[0].S[0].s_d[0].y=1;
-	G[0].S[1].s_d[0].d=1;
-	G[0].S[1].s_d[0].m=1;
-	G[0].S[1].s_d[0].y=1;
-	G[0].S[2].s_d[0].d=1;
-	G[0].S[2].s_d[0].m=1;
-	G[0].S[2].s_d[0].y=1;
+	G[0].S[0].s_d[0].d=22;
+	G[0].S[0].s_d[0].m=10;
+	G[0].S[0].s_d[0].y=2018;
+	G[0].S[1].s_d[0].d=29;
+	G[0].S[1].s_d[0].m=10;
+	G[0].S[1].s_d[0].y=2018;
+	G[0].S[2].s_d[0].d=27;
+	G[0].S[2].s_d[0].m=10;
+	G[0].S[2].s_d[0].y=2018;
 	
 	G[0].S[0].time[0].h=1;
 	G[0].S[0].time[0].m=1;
@@ -142,12 +143,12 @@ int main()
 	G[1].S[1].noDates_aval=2;
 	
 	
-	G[1].S[0].s_d[0].d=1;
-	G[1].S[0].s_d[0].m=1;
-	G[1].S[0].s_d[0].y=1;
-	G[1].S[1].s_d[0].d=1;
-	G[1].S[1].s_d[0].m=1;
-	G[1].S[1].s_d[0].y=1;
+	G[1].S[0].s_d[0].d=25;
+	G[1].S[0].s_d[0].m=10;
+	G[1].S[0].s_d[0].y=2018;
+	G[1].S[1].s_d[0].d=26;
+	G[1].S[1].s_d[0].m=10;
+	G[1].S[1].s_d[0].y=2018;
 	
 	G[1].S[0].time[0].h=1;
 	G[1].S[0].time[0].m=1;
@@ -177,9 +178,9 @@ int main()
 	G[2].S[0].dt[1].y=2018;
 	G[2].S[0].noDates_aval=2;
 	
-	G[2].S[0].s_d[0].d=1;
-	G[2].S[0].s_d[0].m=1;
-	G[2].S[0].s_d[0].y=1;
+	G[2].S[0].s_d[0].d=30;
+	G[2].S[0].s_d[0].m=10;
+	G[2].S[0].s_d[0].y=2018;
 	
 	G[2].S[0].time[0].h=1;
 	G[2].S[0].time[0].m=1;
@@ -213,12 +214,12 @@ int main()
 	G[3].S[1].dt[1].y=2018;
 	G[3].S[1].noDates_aval=2;
 	
-	G[3].S[0].s_d[0].d=1;
-	G[3].S[0].s_d[0].m=1;
-	G[3].S[0].s_d[0].y=1;
-	G[3].S[1].s_d[0].d=1;
-	G[3].S[1].s_d[0].m=1;
-	G[3].S[1].s_d[0].y=1;
+	G[3].S[0].s_d[0].d=01;
+	G[3].S[0].s_d[0].m=11;
+	G[3].S[0].s_d[0].y=2018;
+	G[3].S[1].s_d[0].d=03;
+	G[3].S[1].s_d[0].m=10;
+	G[3].S[1].s_d[0].y=2018;
 	
 	G[3].S[0].time[0].h=1;
 	G[3].S[0].time[0].m=1;
@@ -269,15 +270,15 @@ int main()
 	G[4].S[2].noDates_aval=2;
 	
 
-	G[4].S[0].s_d[0].d=1;
-	G[4].S[0].s_d[0].m=1;
-	G[4].S[0].s_d[0].y=1;
-	G[4].S[1].s_d[0].d=1;
-	G[4].S[1].s_d[0].m=1;
-	G[4].S[1].s_d[0].y=1;
-	G[4].S[2].s_d[0].d=1;
-	G[4].S[2].s_d[0].m=1;
-	G[4].S[2].s_d[0].y=1;
+	G[4].S[0].s_d[0].d=20;
+	G[4].S[0].s_d[0].m=10;
+	G[4].S[0].s_d[0].y=2018;
+	G[4].S[1].s_d[0].d=01;
+	G[4].S[1].s_d[0].m=11;
+	G[4].S[1].s_d[0].y=2018;
+	G[4].S[2].s_d[0].d=26;
+	G[4].S[2].s_d[0].m=10;
+	G[4].S[2].s_d[0].y=2018;
 	
 	G[4].S[0].time[0].h=1;
 	G[4].S[0].time[0].m=1;
@@ -320,12 +321,12 @@ int main()
 	G[5].S[1].dt[1].y=2018;
 	G[5].S[1].noDates_aval=2;
 	
-	G[5].S[0].s_d[0].d=1;
-	G[5].S[0].s_d[0].m=1;
-	G[5].S[0].s_d[0].y=1;
-	G[5].S[1].s_d[0].d=1;
-	G[5].S[1].s_d[0].m=1;
-	G[5].S[1].s_d[0].y=1;
+	G[5].S[0].s_d[0].d=20;
+	G[5].S[0].s_d[0].m=10;
+	G[5].S[0].s_d[0].y=2018;
+	G[5].S[1].s_d[0].d=28;
+	G[5].S[1].s_d[0].m=10;
+	G[5].S[1].s_d[0].y=2018;
 	
 	G[5].S[0].time[0].h=1;
 	G[5].S[0].time[0].m=1;
@@ -379,8 +380,9 @@ int main()
 	//UniqueSport("kcr","hyderabad");
 
 	//getFixturesSortedonState(G,"telangana");
-	
-	getFixturesinCity("jaipur");
+	printf("Enter City, start date and end date\n");
+	scanf("%s%d%d%d%d%d%d",city,&tDate[0].d,&tDate[0].m,&tDate[0].y,&tDate[1].d,&tDate[1].m,&tDate[1].y);
+	getFixturesinCity(city);
 	for(i=0;i<total;i++)
 	{
 		for(j=0;j<G[i].noOfSports;j++)
@@ -745,7 +747,6 @@ getFixturesinCity(char city[])
 {
 	int i,j,k,found=0,once=0;
 	c=0;
-	scanf("%d%d%d%d%d%d",&tDate[0].d,&tDate[0].m,&tDate[0].y,&tDate[1].d,&tDate[1].m,&tDate[1].y);
 	
 	for(i=0;i<total;i++)
 	{
@@ -761,10 +762,8 @@ getFixturesinCity(char city[])
 		for(j=0;j<req[i].noOfSports;j++)
 		{
 			found=0;
-			for(k=0;k<req[i].S[j].noDates_aval&&found==0;k++)
-			{
-if((req[i].S[j].dt[k].d>=tDate[0].d)&&(req[i].S[j].dt[k].m>=tDate[0].m)&&(req[i].S[j].dt[k].y>=tDate[0].y)&&\
-(req[i].S[j].dt[k].d<=tDate[1].d)&&(req[i].S[j].dt[k].m<=tDate[1].m)&&(req[i].S[j].dt[k].y<=tDate[1].y))
+if((req[i].S[j].s_d[0].d>=tDate[0].d)&&(req[i].S[j].s_d[0].m>=tDate[0].m)&&(req[i].S[j].s_d[0].y>=tDate[0].y)&&\
+(req[i].S[j].s_d[0].d<=tDate[1].d)&&(req[i].S[j].s_d[0].m<=tDate[1].m)&&(req[i].S[j].s_d[0].y<=tDate[1].y))
 				{
 					
 					
@@ -772,7 +771,7 @@ if((req[i].S[j].dt[k].d>=tDate[0].d)&&(req[i].S[j].dt[k].m>=tDate[0].m)&&(req[i]
 					found=1;
 					once=1;
 				}
-			}
+			
 		}
 	}
 	if(once==0)
