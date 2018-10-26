@@ -5,22 +5,26 @@
 
 
 
-struct date
-{
-	int d,m,y;
-};
+
 
 struct time
 {
 	int h,m;
 };
 
+struct date
+{
+	int d,m,y;
+	struct time time[2];
+};
+
 struct sports
 {
 	char name[50];
-	struct date dt[2];
-	struct date s_d[1];
-	struct time time[2];
+	struct date dt[10];
+	struct date s_d[10];
+	
+	
 	int rate;
 }tempS;
 
@@ -37,10 +41,10 @@ struct grounds{
 	//struct date D[1];
 	//char rate[10];
 	//char sport[50];
-}temp,G[100];
+}temp,G[100],req[100];
 
 
-int total=8,size=100;
+int total=8,size=100,c=0;
 int main()
 {
 	int i,j;
@@ -141,7 +145,7 @@ int main()
 	strcpy(G[2].gName,"jntu");
 	strcpy(G[2].city,"hyderabad");
 	strcpy(G[2].state,"telangana");
-	strcpy(G[2].S[0].name,"badminton");
+	strcpy(G[2].S[0].name,"swimming");
 	G[2].noOfSports=1;
 	G[2].S[0].dt[0].d=1;
 	G[2].S[0].dt[0].m=1;
@@ -333,9 +337,11 @@ int main()
 	
 	//deleteGround("sms","nag1pur");
 	
+	//sportWithGround("cricket");
 	
-	
-	
+	//getFixturesinState("telangana");
+
+	UniqueSport("kcr","hyderabad");
 
 	//getFixturesSortedonState(G,"telangana");
 
@@ -552,13 +558,151 @@ void deleteGround(char GroundName[],char city[])
 }
 
 
+void sportWithGround(char sport[])
+{
+	int i,j,k;
+	for(k=0;k<total;k++)
+	{
+		for (j = 0; j < G[k].noOfSports - i; j++)
+		{
+ 			if (strcmp(G[k].S[j].name, sport)==0)
+			{
+				//printf("%s\n",G[k].gName);
+				req[c]=G[k];
+				c++;
+			}
+		}		
+	}	
+	sort_gName();
+	for(i=0;i<c;i++)
+	{
+		printf("%s\t",req[i].gName);
+	}
+}
+
+sort_gName()
+{
+	int i,j,k;
+	for (i = 1; i < c; i++)
+	{
+  		for (j = 0; j < c - i; j++)
+		{
+ 			if (strcmp(req[j].gName, req[j + 1].gName) > 0)
+			{
+ 				temp = req[j];
+ 				req[j] = req[j + 1];
+ 				req[j + 1] = temp;
+ 			}
+		}
+	}
+}
+
+getFixturesinState(char state[])
+{
+		
+	int i,j,k;
+	c=0;
+	for(int i=0;i<total;i++)
+	{
+		if(strcmp(G[i].state,state)==0)
+		{
+			//printf("%s\n",G[i].sport);
+			req[c]=G[i];
+			c++;
+		}
+	}
+	sortCGS();
+	for(i=0;i<c;i++)
+	{
+		for(j=0;j<req[i].noOfSports;j++)
+			printf("%s,%s,%s,%s\n",req[i].gName,req[i].city,req[i].state,req[i].S[j].name);	
+	}
+}
+
+sortCGS()
+{
+	int i,j,k;
+	for (i = 1; i < c; i++)
+	{
+  		for (j = 0; j < c - i; j++)
+		{
+ 			if (strcmp(req[j].city, req[j + 1].city) > 0)
+			{
+ 				temp = req[j];
+ 				req[j] = req[j + 1];
+ 				req[j + 1] = temp;
+ 			}
+			else if((strcmp(req[j].city, req[j + 1].city)==0)&&(strcmp(req[j].gName,req[j+1].gName)>0))
+			{	
+				temp=req[j];
+				req[j]=req[j+1];
+				req[j+1]=temp;		
+			}
+		}
+	}
+	for(k=0;k<c;k++)
+	{
+		for (i = 1; i < req[k].noOfSports; i++)
+		{
+	  		for (j = 0; j < req[k].noOfSports - i; j++)
+			{
+	 			if (strcmp(req[k].S[j].name,req[k].S[j+1].name) > 0)
+				{
+	 				tempS = req[k].S[j];
+	 				req[k].S[j] = req[k].S[j+1];
+	 				req[k].S[j+1] = tempS;
+	 			}
+			}
+		}
+
+	}
+}
 
 
+UniqueSport(char ground[],char city[])
+{
+	int i,j,k,pos_req,found=0,count=0;
+	c=0;
+	for(i=0;i<100;i++)	
+		strcpy(req[i].gName,"null");
+	for(i=0;i<total&&found==0;i++)
+	{
+		if(strcmp(G[i].gName,ground)==0&&(strcmp(G[i].city,city)==0))
+		{
+			pos_req=i;
+			found=1;
+		}
+	}
+	for(i=0;i<total;i++)
+	{
+		if((strcmp(G[i].gName,ground)!=0)&&(strcmp(G[i].city,city)==0))
+		{
+			req[c]=G[i];
+			c++;
+		}
+	}
+	count=0;
+	while(count!=G[pos_req].noOfSports)
+	{
+		for(i=0;i<c;i++)
+		{	
+			found=0;
+			for(j=0;j<req[i].noOfSports&&found==0;j++)
+			{
+				if(strcmp(req[i].S[j].name,G[pos_req].S[count].name)==0)
+				{
+					found=1;
+				}
+			}
+			if(found==0)
+			{
+				printf("%s\t",G[pos_req].S[count].name);
+			}
+		}
+		count++;
+	}
 
-
-
-
-
+}
 
 
 
