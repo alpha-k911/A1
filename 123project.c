@@ -40,7 +40,7 @@ struct grounds{
 }temp,G[100];
 
 
-int total=8;
+int total=8,size=100;
 int main()
 {
 	int i,j;
@@ -308,13 +308,34 @@ int main()
 	//sort();
 	
 	//initialSort(G,8);
-	//addSport(G,"rajiv","jaipur","hockey",9);
+	
+	//getGroundInfo("jaipur");
+	
+	//addSport("rajiv","jaipur","hockey");
+	
+	//deleteSport("rajiv","jaipur","cricket");
+	
+	scanf("%s",temp.gName);
+	scanf("%s",temp.city);
+	scanf("%s",temp.state);
+	scanf("%d",&temp.noOfSports);
+	for(i=0;i<temp.noOfSports;i++)
+	{
+		scanf("%s",temp.S[i].name);
+		scanf("%d%d%d%d%d%d",&temp.S[i].dt[0].d,&temp.S[i].dt[0].m,&temp.S[i].dt[0].y,&temp.S[i].dt[].d,&temp.S[i].dt[1].m,&temp.dt[1].y,temp.S[1].time[1].m=1;);
+		scanf("%s",temp.gName);
+	
+	}
+	
+	
+	
+	addGround();
 	
 	//deleteGround(G,"rajiv","jaipur",8);
 	
-	getGroundInfo("jaipur");
 	
-	//deleteSport(G,"sms","nagpur","cricket",8);
+	
+	
 
 	//getFixturesSortedonState(G,"telangana");
 
@@ -327,13 +348,15 @@ int main()
 
 getGroundInfo(char city[])
 {
-		
+	int j;	
 	sort();
 	for(int i=0;i<total;i++)
 	{
 		if(strcmp(G[i].city,city)==0)
 		{
-			printf("%s\n",G[i].gName);
+			//printf("%s\n",G[i].gName);
+			for(j=0;j<G[i].noOfSports;j++)
+				printf("%s,%s,%s,%s\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name);
 		}
 	}
 }
@@ -375,8 +398,125 @@ sort()
 
 
 
+void addSport(char GroundName[],char city[],char sport[])
+{
+	int found=0,i,j,pos;
+	for(i=0;i<size&&found==0;i++)
+	{
+		if((strcmp(G[i].gName,GroundName)==0)&&(strcmp(G[i].city,city)==0))
+		{
+			for(j=0;j<G[i].noOfSports;j++)
+			{
+				if(strcmp(G[i].S[j].name,sport)==0)
+				{
+					found=1;
+				}
+			}
+		
+		}
+		else if(strcmp(G[i].gName,"null")==0)
+		{
+			found=2;
+			pos=i;
+		}
+	}
+
+	if(found==1)
+	{
+
+		printf("FAILURE\n");
+	}
+	else
+	{
+		strcpy(G[pos].S[G[pos].noOfSports].name,sport);
+		strcpy(G[pos].gName,GroundName);
+		strcpy(G[pos].city,city);
+		printf("SUCCESS\n");
+		if(found==2)
+			total++;
+		G[pos].noOfSports++;
+	}
+}
 
 
+void deleteSport(char GroundName[],char city[],char sport[])
+{
+	int found=0,i,j,pos,pos_Ground,pos_Sport;
+	for(i=0;i<total&&found==0;i++)
+	{
+		if((strcmp(G[i].gName,GroundName)==0)&&(strcmp(G[i].city,city)==0))
+		{
+			for(j=0;j<G[i].noOfSports;j++)
+			{
+				if(strcmp(G[i].S[j].name,sport)==0)
+				{
+					found=1;
+					pos_Ground=i;
+					pos_Sport=j;
+				}
+			}
+		
+		}
+	}
+	if(found==1)
+	{
+		for(i=pos_Sport;i<G[pos_Ground].noOfSports-1;i++)
+		{
+			swap_Sports(pos_Ground,i,i+1);	
+		}
+		G[pos_Ground].noOfSports--;
+		printf("SUCCESS\n");
+	}
+	else
+	{
+		printf("FAILURE\n");
+		
+	}
+}
+
+swap(struct grounds G[],int i,int j)
+{
+	temp=G[i];
+	G[i]=G[j];
+	G[j]=temp;
+}
+
+swap_Sports(int pos_Ground,int i,int j)
+{
+	tempS=G[pos_Ground].S[i];
+	G[pos_Ground].S[i]=G[pos_Ground].S[j];
+	G[pos_Ground].S[j]=tempS;
+}
+
+
+void addGround() //time to be added
+{
+
+	int found=0,i,j,pos;
+	for(i=0;i<size&&found==0;i++)
+	{
+		if(strcmp((G[i].gName,temp.gName)==0)&&(strcmp(G[i].city,temp.city)==0))
+		{
+			found=2;
+		}
+		else if(strcmp(G[i].gName,"null")==0)
+		{
+			found=1;
+			pos=i;
+		}
+	}
+	if(found==2)
+	{
+		printf("FAILURE\n");
+	}
+	else
+	{
+		G[pos]=temp;
+		//details should be added
+		printf("SUCCESS\n");
+		total++;
+	}
+}
 
 
 
