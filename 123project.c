@@ -16,13 +16,13 @@ struct date
 {
 	int d,m,y;
 	struct time time[2];
-}tempD,tDate[10];
+}tempD,tDate[10],tempDate[10];
 
 struct sports
 {
 	char name[50];
 	struct date dt[10];
-	struct date s_d[10];
+	struct date s_d[1];
 	int rate;
 	struct time time[2];
 	int noDates_aval;
@@ -44,12 +44,12 @@ struct grounds{
 }temp,G[100],req[100];
 
 
-int total=8,size=100,c=0;
+int total=6,size=100,c=0;
 int main()
 {
 	int i,j;
 	char city[10];
-   	strcpy(G[0].gName,"rajiv");
+	strcpy(G[0].gName,"rajiv");
 	strcpy(G[0].city,"jaipur");
 	strcpy(G[0].state,"rajasthan");
 	strcpy(G[0].S[0].name,"cricket");
@@ -59,30 +59,66 @@ int main()
 	G[0].S[0].dt[0].d=22;
 	G[0].S[0].dt[0].m=10;
 	G[0].S[0].dt[0].y=2018;
+	G[0].S[0].dt[0].time[0].h=1;
+	G[0].S[0].dt[0].time[0].m=1;
+	G[0].S[0].dt[0].time[1].h=1;
+	G[0].S[0].dt[0].time[1].m=1;
+
+
 	G[0].S[0].dt[1].d=23;
 	G[0].S[0].dt[1].m=10;
 	G[0].S[0].dt[1].y=2018;
+	G[0].S[0].dt[1].time[0].h=1;
+	G[0].S[0].dt[1].time[0].m=1;
+	G[0].S[0].dt[1].time[1].h=1;
+	G[0].S[0].dt[1].time[1].m=1;
+
+
 	G[0].S[0].dt[2].d=27;
 	G[0].S[0].dt[2].m=10;
 	G[0].S[0].dt[2].y=2018;
+	G[0].S[0].dt[2].time[0].h=1;
+	G[0].S[0].dt[2].time[0].m=1;
+	G[0].S[0].dt[2].time[1].h=1;
+	G[0].S[0].dt[2].time[1].m=1;
 	G[0].S[0].noDates_aval=3;
-	
+
 	G[0].S[1].dt[0].d=22;
 	G[0].S[1].dt[0].m=10;
 	G[0].S[1].dt[0].y=2018;
+	G[0].S[1].dt[0].time[0].h=1;
+	G[0].S[1].dt[0].time[0].m=1;
+	G[0].S[1].dt[0].time[1].h=1;
+	G[0].S[1].dt[0].time[1].m=1;
+
+
 	G[0].S[1].dt[1].d=24;
 	G[0].S[1].dt[1].m=10;
 	G[0].S[1].dt[1].y=2018;
+	G[0].S[1].dt[1].time[0].h=1;
+	G[0].S[1].dt[1].time[0].m=1;
+	G[0].S[1].dt[1].time[1].h=1;
+	G[0].S[1].dt[1].time[1].m=1;
 	G[0].S[1].noDates_aval=2;
-	
+
 	G[0].S[2].dt[0].d=28;
 	G[0].S[2].dt[0].m=10;
 	G[0].S[2].dt[0].y=2018;
+	G[0].S[2].dt[0].time[0].h=1;
+	G[0].S[2].dt[0].time[0].m=1;
+	G[0].S[2].dt[0].time[1].h=1;
+	G[0].S[2].dt[0].time[1].m=1;
+
+
 	G[0].S[2].dt[1].d=29;
 	G[0].S[2].dt[1].m=11;
 	G[0].S[2].dt[1].y=2018;
+	G[0].S[2].dt[1].time[0].h=1;
+	G[0].S[2].dt[1].time[0].m=1;
+	G[0].S[2].dt[1].time[1].h=1;
+	G[0].S[2].dt[1].time[1].m=1;
 	G[0].S[2].noDates_aval=2;
-	
+
 	//G[0].S[0].dt[1].d=1;
 	//G[0].S[0].dt[1].m=1;
 	//G[0].S[0].dt[1].y=1;
@@ -92,7 +128,7 @@ int main()
 	//G[0].S[2].dt[1].d=1;
 	//G[0].S[2].dt[1].m=1;
 	//G[0].S[2].dt[1].y=1;
-	
+
 	G[0].S[0].s_d[0].d=22;
 	G[0].S[0].s_d[0].m=10;
 	G[0].S[0].s_d[0].y=2018;
@@ -102,24 +138,15 @@ int main()
 	G[0].S[2].s_d[0].d=27;
 	G[0].S[2].s_d[0].m=10;
 	G[0].S[2].s_d[0].y=2018;
-	
-	G[0].S[0].time[0].h=1;
-	G[0].S[0].time[0].m=1;
-	G[0].S[0].time[1].h=1;
-	G[0].S[0].time[1].m=1;
-	G[0].S[1].time[0].h=1;
-	G[0].S[1].time[0].m=1;
-	G[0].S[1].time[1].h=1;
-	G[0].S[1].time[1].m=1;
-	G[0].S[2].time[0].h=1;
-	G[0].S[2].time[0].m=1;
-	G[0].S[2].time[1].h=1;
-	G[0].S[2].time[1].m=1;
+
+
+
+
 	G[0].S[0].rate=1;
 	G[0].S[1].rate=1;
 	G[0].S[2].rate=1;
-	
-	
+
+
 	strcpy(G[1].gName,"sms");
 	strcpy(G[1].city,"nagpur");
 	strcpy(G[1].state,"maharashtra");
@@ -129,40 +156,52 @@ int main()
 	G[1].S[0].dt[0].d=20;
 	G[1].S[0].dt[0].m=10;
 	G[1].S[0].dt[0].y=2018;
+	G[1].S[0].dt[0].time[0].h=1;
+	G[1].S[0].dt[0].time[0].m=1;
+	G[1].S[0].dt[0].time[1].h=1;
+	G[1].S[0].dt[0].time[1].m=1;
+
 	G[1].S[0].dt[1].d=29;
 	G[1].S[0].dt[1].m=10;
 	G[1].S[0].dt[1].y=2018;
+	G[1].S[0].dt[1].time[0].h=1;
+	G[1].S[0].dt[1].time[0].m=1;
+	G[1].S[0].dt[1].time[1].h=1;
+	G[1].S[0].dt[1].time[1].m=1;
 	G[1].S[0].noDates_aval=2;
-	
+
 	G[1].S[1].dt[0].d=21;
 	G[1].S[1].dt[0].m=10;
 	G[1].S[1].dt[0].y=2018;
+	G[1].S[1].dt[0].time[0].h=1;
+	G[1].S[1].dt[0].time[0].m=1;
+	G[1].S[1].dt[0].time[1].h=1;
+	G[1].S[1].dt[0].time[1].m=1;
+
+
+
 	G[1].S[1].dt[1].d=30;
 	G[1].S[1].dt[1].m=10;
 	G[1].S[1].dt[1].y=2018;
+	G[1].S[1].dt[1].time[0].h=1;
+	G[1].S[1].dt[1].time[0].m=1;
+	G[1].S[1].dt[1].time[1].h=1;
+	G[1].S[1].dt[1].time[1].m=1;
 	G[1].S[1].noDates_aval=2;
-	
-	
+
+
 	G[1].S[0].s_d[0].d=25;
 	G[1].S[0].s_d[0].m=10;
 	G[1].S[0].s_d[0].y=2018;
 	G[1].S[1].s_d[0].d=26;
 	G[1].S[1].s_d[0].m=10;
 	G[1].S[1].s_d[0].y=2018;
-	
-	G[1].S[0].time[0].h=1;
-	G[1].S[0].time[0].m=1;
-	G[1].S[0].time[1].h=1;
-	G[1].S[0].time[1].m=1;
-	G[1].S[1].time[0].h=1;
-	G[1].S[1].time[0].m=1;
-	G[1].S[1].time[1].h=1;
-	G[1].S[1].time[1].m=1;
-	
+
+
 	G[1].S[0].rate=1;
 	G[1].S[1].rate=1;
-	
-	
+
+
 	strcpy(G[2].gName,"jntu");
 	strcpy(G[2].city,"hyderabad");
 	strcpy(G[2].state,"telangana");
@@ -171,26 +210,29 @@ int main()
 	G[2].S[0].dt[0].d=15;
 	G[2].S[0].dt[0].m=10;
 	G[2].S[0].dt[0].y=2018;
-	
-	
+	G[2].S[0].dt[0].time[0].h=1;
+	G[2].S[0].dt[0].time[0].m=1;
+	G[2].S[0].dt[0].time[1].h=1;
+	G[2].S[0].dt[0].time[1].m=1;
+
 	G[2].S[0].dt[1].d=25;
 	G[2].S[0].dt[1].m=10;
 	G[2].S[0].dt[1].y=2018;
+	G[2].S[0].dt[1].time[0].h=1;
+	G[2].S[0].dt[1].time[0].m=1;
+	G[2].S[0].dt[1].time[1].h=1;
+	G[2].S[0].dt[1].time[1].m=1;
 	G[2].S[0].noDates_aval=2;
-	
+
 	G[2].S[0].s_d[0].d=30;
 	G[2].S[0].s_d[0].m=10;
 	G[2].S[0].s_d[0].y=2018;
-	
-	G[2].S[0].time[0].h=1;
-	G[2].S[0].time[0].m=1;
-	G[2].S[0].time[1].h=1;
-	G[2].S[0].time[1].m=1;
-	
+
+
 	G[2].S[0].rate=1;
-	
-	
-	
+
+
+
 	strcpy(G[3].gName,"kcr");
 	strcpy(G[3].city,"hyderabad");
 	strcpy(G[3].state,"telangana");
@@ -200,41 +242,54 @@ int main()
 	G[3].S[0].dt[0].d=22;
 	G[3].S[0].dt[0].m=10;
 	G[3].S[0].dt[0].y=2018;
+	G[3].S[0].dt[0].time[0].h=1;
+	G[3].S[0].dt[0].time[0].m=1;
+	G[3].S[0].dt[0].time[1].h=1;
+	G[3].S[0].dt[0].time[1].m=1;
+
+
 	G[3].S[0].dt[1].d=31;
 	G[3].S[0].dt[1].m=10;
 	G[3].S[0].dt[1].y=2018;
+	G[3].S[0].dt[1].time[0].h=1;
+	G[3].S[0].dt[1].time[0].m=1;
+	G[3].S[0].dt[1].time[1].h=1;
+	G[3].S[0].dt[1].time[1].m=1;
 	G[3].S[0].noDates_aval=2;
-	
-	
+
+
 	G[3].S[1].dt[0].d=21;
 	G[3].S[1].dt[0].m=10;
 	G[3].S[1].dt[0].y=2018;
+	G[3].S[1].dt[0].time[0].h=1;
+	G[3].S[1].dt[0].time[0].m=1;
+	G[3].S[1].dt[0].time[1].h=1;
+	G[3].S[1].dt[0].time[1].m=1;
+
+
+
 	G[3].S[1].dt[1].d=23;
 	G[3].S[1].dt[1].m=10;
 	G[3].S[1].dt[1].y=2018;
+	G[3].S[1].dt[1].time[0].h=1;
+	G[3].S[1].dt[1].time[0].m=1;
+	G[3].S[1].dt[1].time[1].h=1;
+	G[3].S[1].dt[1].time[1].m=1;
 	G[3].S[1].noDates_aval=2;
-	
+
 	G[3].S[0].s_d[0].d=01;
 	G[3].S[0].s_d[0].m=11;
 	G[3].S[0].s_d[0].y=2018;
 	G[3].S[1].s_d[0].d=03;
 	G[3].S[1].s_d[0].m=10;
 	G[3].S[1].s_d[0].y=2018;
-	
-	G[3].S[0].time[0].h=1;
-	G[3].S[0].time[0].m=1;
-	G[3].S[0].time[1].h=1;
-	G[3].S[0].time[1].m=1;
-	G[3].S[1].time[0].h=1;
-	G[3].S[1].time[0].m=1;
-	G[3].S[1].time[1].h=1;
-	G[3].S[1].time[1].m=1;
-	
+
+
 	G[3].S[0].rate=1;
 	G[3].S[1].rate=1;
-	
-	
-	
+
+
+
 	strcpy(G[4].gName,"gandhi");
 	strcpy(G[4].city,"delhi");
 	strcpy(G[4].state,"new_delhi");
@@ -245,30 +300,65 @@ int main()
 	G[4].S[0].dt[0].d=28;
 	G[4].S[0].dt[0].m=10;
 	G[4].S[0].dt[0].y=2018;
+	G[4].S[0].dt[0].time[0].h=1;
+	G[4].S[0].dt[0].time[0].m=1;
+	G[4].S[0].dt[0].time[1].h=1;
+	G[4].S[0].dt[0].time[1].m=1;
+
 	G[4].S[0].dt[1].d=29;
 	G[4].S[0].dt[1].m=10;
 	G[4].S[0].dt[1].y=2018;
+	G[4].S[0].dt[1].time[0].h=1;
+	G[4].S[0].dt[1].time[0].m=1;
+	G[4].S[0].dt[1].time[1].h=1;
+	G[4].S[0].dt[1].time[1].m=1;
 	G[4].S[0].noDates_aval=2;
-	
+
 	G[4].S[1].dt[0].d=21;
 	G[4].S[1].dt[0].m=10;
 	G[4].S[1].dt[0].y=2018;
+	G[4].S[1].dt[0].time[0].h=1;
+	G[4].S[1].dt[0].time[0].m=1;
+	G[4].S[1].dt[0].time[1].h=1;
+	G[4].S[1].dt[0].time[1].m=1;
+
+
 	G[4].S[1].dt[1].d=28;
 	G[4].S[1].dt[1].m=10;
 	G[4].S[1].dt[1].y=2018;
+	G[4].S[1].dt[1].time[0].h=1;
+	G[4].S[1].dt[1].time[0].m=1;
+	G[4].S[1].dt[1].time[1].h=1;
+	G[4].S[1].dt[1].time[1].m=1;
+
+
 	G[4].S[1].dt[2].d=27;
 	G[4].S[1].dt[2].m=10;
 	G[4].S[1].dt[2].y=2018;
+	G[4].S[1].dt[2].time[0].h=1;
+	G[4].S[1].dt[2].time[0].m=1;
+	G[4].S[1].dt[2].time[1].h=1;
+	G[4].S[1].dt[2].time[1].m=1;
 	G[4].S[1].noDates_aval=3;
-	
+
 	G[4].S[2].dt[0].d=28;
 	G[4].S[2].dt[0].m=10;
 	G[4].S[2].dt[0].y=2018;
+	G[4].S[2].dt[0].time[0].h=1;
+	G[4].S[2].dt[0].time[0].m=1;
+	G[4].S[2].dt[0].time[1].h=1;
+	G[4].S[2].dt[0].time[1].m=1;
+
+
 	G[4].S[2].dt[1].d=29;
 	G[4].S[2].dt[1].m=10;
 	G[4].S[2].dt[1].y=2018;
+	G[4].S[2].dt[1].time[0].h=1;
+	G[4].S[2].dt[1].time[0].m=1;
+	G[4].S[2].dt[1].time[1].h=1;
+	G[4].S[2].dt[1].time[1].m=1;
 	G[4].S[2].noDates_aval=2;
-	
+
 
 	G[4].S[0].s_d[0].d=20;
 	G[4].S[0].s_d[0].m=10;
@@ -279,26 +369,14 @@ int main()
 	G[4].S[2].s_d[0].d=26;
 	G[4].S[2].s_d[0].m=10;
 	G[4].S[2].s_d[0].y=2018;
-	
-	G[4].S[0].time[0].h=1;
-	G[4].S[0].time[0].m=1;
-	G[4].S[0].time[1].h=1;
-	G[4].S[0].time[1].m=1;
-	G[4].S[1].time[0].h=1;
-	G[4].S[1].time[0].m=1;
-	G[4].S[1].time[1].h=1;
-	G[4].S[1].time[1].m=1;
-	G[4].S[2].time[0].h=1;
-	G[4].S[2].time[0].m=1;
-	G[4].S[2].time[1].h=1;
-	G[4].S[2].time[1].m=1;
-	
+
+
 	G[4].S[0].rate=1;
 	G[4].S[1].rate=1;
 	G[4].S[2].rate=1;
-	
-	
-	
+
+
+
 	strcpy(G[5].gName,"rajiv_gandhi");
 	strcpy(G[5].city,"indore");
 	strcpy(G[5].state,"maharashtra");
@@ -308,35 +386,47 @@ int main()
 	G[5].S[0].dt[0].d=29;
 	G[5].S[0].dt[0].m=10;
 	G[5].S[0].dt[0].y=2018;
+	G[5].S[0].dt[0].time[0].h=1;
+	G[5].S[0].dt[0].time[0].m=1;
+	G[5].S[0].dt[0].time[1].h=1;
+	G[5].S[0].dt[0].time[1].m=1;
+
+
 	G[5].S[0].dt[1].d=31;
 	G[5].S[0].dt[1].m=10;
 	G[5].S[0].dt[1].y=2018;
+	G[5].S[0].dt[1].time[0].h=1;
+	G[5].S[0].dt[1].time[0].m=1;
+	G[5].S[0].dt[1].time[1].h=1;
+	G[5].S[0].dt[1].time[1].m=1;
 	G[5].S[0].noDates_aval=2;
-	
+
 	G[5].S[1].dt[0].d=22;
 	G[5].S[1].dt[0].m=10;
 	G[5].S[1].dt[0].y=2018;
+	G[5].S[1].dt[0].time[0].h=1;
+	G[5].S[1].dt[0].time[0].m=1;
+	G[5].S[1].dt[0].time[1].h=1;
+	G[5].S[1].dt[0].time[1].m=1;
+
+
 	G[5].S[1].dt[1].d=23;
 	G[5].S[1].dt[1].m=10;
 	G[5].S[1].dt[1].y=2018;
+	G[5].S[1].dt[1].time[0].h=1;
+	G[5].S[1].dt[1].time[0].m=1;
+	G[5].S[1].dt[1].time[1].h=1;
+	G[5].S[1].dt[1].time[1].m=1;
 	G[5].S[1].noDates_aval=2;
-	
+
 	G[5].S[0].s_d[0].d=20;
 	G[5].S[0].s_d[0].m=10;
 	G[5].S[0].s_d[0].y=2018;
 	G[5].S[1].s_d[0].d=28;
 	G[5].S[1].s_d[0].m=10;
 	G[5].S[1].s_d[0].y=2018;
-	
-	G[5].S[0].time[0].h=1;
-	G[5].S[0].time[0].m=1;
-	G[5].S[0].time[1].h=1;
-	G[5].S[0].time[1].m=1;
-	G[5].S[1].time[0].h=1;
-	G[5].S[1].time[0].m=1;
-	G[5].S[1].time[1].h=1;
-	G[5].S[1].time[1].m=1;
-	
+
+
 	G[5].S[0].rate=1;
 	G[5].S[1].rate=1;
 	
@@ -380,13 +470,15 @@ int main()
 	//UniqueSport("kcr","hyderabad");
 
 	//getFixturesSortedonState(G,"telangana");
-	printf("Enter City, start date and end date\n");
-	scanf("%s%d%d%d%d%d%d",city,&tDate[0].d,&tDate[0].m,&tDate[0].y,&tDate[1].d,&tDate[1].m,&tDate[1].y);
-	getFixturesinCity(city);
+	
+	//=printf("Enter City, start date and end date\n");
+	//=scanf("%s%d%d%d%d%d%d",city,&tDate[0].d,&tDate[0].m,&tDate[0].y,&tDate[1].d,&tDate[1].m,&tDate[1].y);
+	//=getFixturesinCity(city);
+	getFixturesSortedOnDate();
 	for(i=0;i<total;i++)
 	{
 		for(j=0;j<G[i].noOfSports;j++)
-		printf("%s,%s,%s,%s\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name);	
+		printf("%s,%s,%s,%s %d-%d-%d\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name,G[i].S[j].s_d[0].d,G[i].S[j].s_d[0].m,G[i].S[j].s_d[0].y);	
 	}
 }
 
@@ -653,7 +745,12 @@ getFixturesinState(char state[])
 	for(i=0;i<c;i++)
 	{
 		for(j=0;j<req[i].noOfSports;j++)
-			printf("%s,%s,%s,%s\n",req[i].gName,req[i].city,req[i].state,req[i].S[j].name);	
+		{
+			if(req[i].S[j].s_d[0].d!=0)
+			{
+				printf("%s,%s,%s,%s\n",req[i].gName,req[i].city,req[i].state,req[i].S[j].name);	
+			}
+		}
 	}
 }
 
@@ -670,7 +767,7 @@ sortCGS()
  				req[j] = req[j + 1];
  				req[j + 1] = temp;
  			}
-			else if((strcmp(req[j].city, req[j + 1].city)==0)&&(strcmp(req[j].gName,req[j+1].gName)>0))
+	else if((strcmp(req[j].city, req[j + 1].city)==0)&&(strcmp(req[j].gName,req[j+1].gName)>0))
 			{	
 				temp=req[j];
 				req[j]=req[j+1];
@@ -812,6 +909,49 @@ sort_g()
 
 }
 
+getFixturesSortedOnDate()
+{
+	int i,j,k;
+	for(k=0;k<total;k++)
+	{
+		for (i = 1; i <G[k].noOfSports ; i++)
+		{
+	  		for (j = 0; j < G[k].noOfSports - i; j++)
+			{
+	 			if (G[k].S[j].s_d[0].y>G[k].S[j+1].s_d[0].y)
+				{
+	 				tempS = G[k].S[j];
+	 				G[k].S[j] = G[k].S[j+1];
+	 				G[k].S[j+1] = tempS;
+	 			}
+	 			if(G[k].S[j].s_d[0].y==G[k].S[j+1].s_d[0].y)
+	 			{
+	 				if (G[k].S[j].s_d[0].m>G[k].S[j+1].s_d[0].m)
+					{
+		 				tempS = G[k].S[j];
+		 				G[k].S[j] = G[k].S[j+1];
+		 				G[k].S[j+1] = tempS;
+		 			}
+		 			if(G[k].S[j].s_d[0].m==G[k].S[j+1].s_d[0].m)
+		 			{
+		 				if (G[k].S[j].s_d[0].d>G[k].S[j+1].s_d[0].d)
+						{
+			 				tempS = G[k].S[j];
+			 				G[k].S[j] = G[k].S[j+1];
+			 				G[k].S[j+1] = tempS;
+			 			}
+		 			}
+	 			}
+	 		}
+	 	}
+	 }
+	 for(i=0;i<total;i++)
+	{
+		for(j=0;j<G[i].noOfSports;j++)
+		printf("%s,%s,%s,%s %d-%d-%d\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name,G[i].S[j].s_d[0].d,G[i].S[j].s_d[0].m,G[i].S[j].s_d[0].y);	
+	}
+	 
+}
 
 
 
@@ -896,9 +1036,26 @@ sort_g()
 
 
 
+/*
+datecmp(struct date d1,struct date d2)
+{
 
+	if(d1.y==d2.y)
+	{
+		if(d1.m==d2.m)
+		{
+			if(d1.d==d2.d)
+			{
+				res=0;		
+			}
+			else if(d1.d<d2.d)
+				res=-1;
+			else
+		}
+	}
 
 
+}*/
 
 
 
