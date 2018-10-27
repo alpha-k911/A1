@@ -48,7 +48,7 @@ int total=6,size=100,c=0;
 int main()
 {
 	int i,j;
-	char city[10];
+	char city[10],sport[50];
 	strcpy(G[0].gName,"rajiv");
 	strcpy(G[0].city,"jaipur");
 	strcpy(G[0].state,"rajasthan");
@@ -59,75 +59,66 @@ int main()
 	G[0].S[0].dt[0].d=22;
 	G[0].S[0].dt[0].m=10;
 	G[0].S[0].dt[0].y=2018;
-	G[0].S[0].dt[0].time[0].h=1;
-	G[0].S[0].dt[0].time[0].m=1;
-	G[0].S[0].dt[0].time[1].h=1;
-	G[0].S[0].dt[0].time[1].m=1;
+	G[0].S[0].dt[0].time[0].h=11;
+	G[0].S[0].dt[0].time[0].m=00;
+	G[0].S[0].dt[0].time[1].h=16;
+	G[0].S[0].dt[0].time[1].m=00;
 
 
 	G[0].S[0].dt[1].d=23;
 	G[0].S[0].dt[1].m=10;
 	G[0].S[0].dt[1].y=2018;
-	G[0].S[0].dt[1].time[0].h=1;
-	G[0].S[0].dt[1].time[0].m=1;
-	G[0].S[0].dt[1].time[1].h=1;
-	G[0].S[0].dt[1].time[1].m=1;
+	G[0].S[0].dt[1].time[0].h=10;
+	G[0].S[0].dt[1].time[0].m=00;
+	G[0].S[0].dt[1].time[1].h=12;
+	G[0].S[0].dt[1].time[1].m=00;
 
 
 	G[0].S[0].dt[2].d=27;
 	G[0].S[0].dt[2].m=10;
 	G[0].S[0].dt[2].y=2018;
-	G[0].S[0].dt[2].time[0].h=1;
-	G[0].S[0].dt[2].time[0].m=1;
-	G[0].S[0].dt[2].time[1].h=1;
-	G[0].S[0].dt[2].time[1].m=1;
+	G[0].S[0].dt[2].time[0].h=10;
+	G[0].S[0].dt[2].time[0].m=00;
+	G[0].S[0].dt[2].time[1].h=11;
+	G[0].S[0].dt[2].time[1].m=00;
 	G[0].S[0].noDates_aval=3;
 
 	G[0].S[1].dt[0].d=22;
 	G[0].S[1].dt[0].m=10;
 	G[0].S[1].dt[0].y=2018;
-	G[0].S[1].dt[0].time[0].h=1;
-	G[0].S[1].dt[0].time[0].m=1;
-	G[0].S[1].dt[0].time[1].h=1;
-	G[0].S[1].dt[0].time[1].m=1;
+	G[0].S[1].dt[0].time[0].h=14;
+	G[0].S[1].dt[0].time[0].m=00;
+	G[0].S[1].dt[0].time[1].h=16;
+	G[0].S[1].dt[0].time[1].m=00;
 
 
 	G[0].S[1].dt[1].d=24;
 	G[0].S[1].dt[1].m=10;
 	G[0].S[1].dt[1].y=2018;
-	G[0].S[1].dt[1].time[0].h=1;
-	G[0].S[1].dt[1].time[0].m=1;
-	G[0].S[1].dt[1].time[1].h=1;
-	G[0].S[1].dt[1].time[1].m=1;
+	G[0].S[1].dt[1].time[0].h=15;
+	G[0].S[1].dt[1].time[0].m=00;
+	G[0].S[1].dt[1].time[1].h=18;
+	G[0].S[1].dt[1].time[1].m=00;
 	G[0].S[1].noDates_aval=2;
 
 	G[0].S[2].dt[0].d=28;
 	G[0].S[2].dt[0].m=10;
 	G[0].S[2].dt[0].y=2018;
-	G[0].S[2].dt[0].time[0].h=1;
-	G[0].S[2].dt[0].time[0].m=1;
-	G[0].S[2].dt[0].time[1].h=1;
-	G[0].S[2].dt[0].time[1].m=1;
+	G[0].S[2].dt[0].time[0].h=13;
+	G[0].S[2].dt[0].time[0].m=00;
+	G[0].S[2].dt[0].time[1].h=16;
+	G[0].S[2].dt[0].time[1].m=00;
 
 
 	G[0].S[2].dt[1].d=29;
 	G[0].S[2].dt[1].m=11;
 	G[0].S[2].dt[1].y=2018;
-	G[0].S[2].dt[1].time[0].h=1;
-	G[0].S[2].dt[1].time[0].m=1;
-	G[0].S[2].dt[1].time[1].h=1;
-	G[0].S[2].dt[1].time[1].m=1;
+	G[0].S[2].dt[1].time[0].h=18;
+	G[0].S[2].dt[1].time[0].m=00;
+	G[0].S[2].dt[1].time[1].h=20;
+	G[0].S[2].dt[1].time[1].m=00;
 	G[0].S[2].noDates_aval=2;
 
-	//G[0].S[0].dt[1].d=1;
-	//G[0].S[0].dt[1].m=1;
-	//G[0].S[0].dt[1].y=1;
-	//G[0].S[1].dt[1].d=1;
-	//G[0].S[1].dt[1].m=1;
-	//G[0].S[1].dt[1].y=1;
-	//G[0].S[2].dt[1].d=1;
-	//G[0].S[2].dt[1].m=1;
-	//G[0].S[2].dt[1].y=1;
 
 	G[0].S[0].s_d[0].d=22;
 	G[0].S[0].s_d[0].m=10;
@@ -135,7 +126,7 @@ int main()
 	G[0].S[1].s_d[0].d=29;
 	G[0].S[1].s_d[0].m=10;
 	G[0].S[1].s_d[0].y=2018;
-	G[0].S[2].s_d[0].d=27;
+	G[0].S[2].s_d[0].d=26;
 	G[0].S[2].s_d[0].m=10;
 	G[0].S[2].s_d[0].y=2018;
 
@@ -153,40 +144,40 @@ int main()
 	strcpy(G[1].S[0].name,"cricket");
 	strcpy(G[1].S[1].name,"swimming");
 	G[1].noOfSports=2;
-	G[1].S[0].dt[0].d=20;
+	G[1].S[0].dt[0].d=22;
 	G[1].S[0].dt[0].m=10;
 	G[1].S[0].dt[0].y=2018;
-	G[1].S[0].dt[0].time[0].h=1;
-	G[1].S[0].dt[0].time[0].m=1;
-	G[1].S[0].dt[0].time[1].h=1;
-	G[1].S[0].dt[0].time[1].m=1;
+	G[1].S[0].dt[0].time[0].h=13;
+	G[1].S[0].dt[0].time[0].m=00;
+	G[1].S[0].dt[0].time[1].h=17;
+	G[1].S[0].dt[0].time[1].m=00;
 
 	G[1].S[0].dt[1].d=29;
 	G[1].S[0].dt[1].m=10;
 	G[1].S[0].dt[1].y=2018;
-	G[1].S[0].dt[1].time[0].h=1;
-	G[1].S[0].dt[1].time[0].m=1;
-	G[1].S[0].dt[1].time[1].h=1;
-	G[1].S[0].dt[1].time[1].m=1;
+	G[1].S[0].dt[1].time[0].h=18;
+	G[1].S[0].dt[1].time[0].m=00;
+	G[1].S[0].dt[1].time[1].h=20;
+	G[1].S[0].dt[1].time[1].m=00;
 	G[1].S[0].noDates_aval=2;
 
 	G[1].S[1].dt[0].d=21;
 	G[1].S[1].dt[0].m=10;
 	G[1].S[1].dt[0].y=2018;
-	G[1].S[1].dt[0].time[0].h=1;
-	G[1].S[1].dt[0].time[0].m=1;
-	G[1].S[1].dt[0].time[1].h=1;
-	G[1].S[1].dt[0].time[1].m=1;
+	G[1].S[1].dt[0].time[0].h=10;
+	G[1].S[1].dt[0].time[0].m=00;
+	G[1].S[1].dt[0].time[1].h=15;
+	G[1].S[1].dt[0].time[1].m=00;
 
 
 
 	G[1].S[1].dt[1].d=30;
 	G[1].S[1].dt[1].m=10;
 	G[1].S[1].dt[1].y=2018;
-	G[1].S[1].dt[1].time[0].h=1;
-	G[1].S[1].dt[1].time[0].m=1;
-	G[1].S[1].dt[1].time[1].h=1;
-	G[1].S[1].dt[1].time[1].m=1;
+	G[1].S[1].dt[1].time[0].h=11;
+	G[1].S[1].dt[1].time[0].m=00;
+	G[1].S[1].dt[1].time[1].h=14;
+	G[1].S[1].dt[1].time[1].m=00;
 	G[1].S[1].noDates_aval=2;
 
 
@@ -210,18 +201,18 @@ int main()
 	G[2].S[0].dt[0].d=15;
 	G[2].S[0].dt[0].m=10;
 	G[2].S[0].dt[0].y=2018;
-	G[2].S[0].dt[0].time[0].h=1;
-	G[2].S[0].dt[0].time[0].m=1;
-	G[2].S[0].dt[0].time[1].h=1;
-	G[2].S[0].dt[0].time[1].m=1;
+	G[2].S[0].dt[0].time[0].h=10;
+	G[2].S[0].dt[0].time[0].m=00;
+	G[2].S[0].dt[0].time[1].h=15;
+	G[2].S[0].dt[0].time[1].m=00;
 
 	G[2].S[0].dt[1].d=25;
 	G[2].S[0].dt[1].m=10;
 	G[2].S[0].dt[1].y=2018;
-	G[2].S[0].dt[1].time[0].h=1;
-	G[2].S[0].dt[1].time[0].m=1;
-	G[2].S[0].dt[1].time[1].h=1;
-	G[2].S[0].dt[1].time[1].m=1;
+	G[2].S[0].dt[1].time[0].h=07;
+	G[2].S[0].dt[1].time[0].m=00;
+	G[2].S[0].dt[1].time[1].h=10;
+	G[2].S[0].dt[1].time[1].m=00;
 	G[2].S[0].noDates_aval=2;
 
 	G[2].S[0].s_d[0].d=30;
@@ -242,39 +233,39 @@ int main()
 	G[3].S[0].dt[0].d=22;
 	G[3].S[0].dt[0].m=10;
 	G[3].S[0].dt[0].y=2018;
-	G[3].S[0].dt[0].time[0].h=1;
-	G[3].S[0].dt[0].time[0].m=1;
-	G[3].S[0].dt[0].time[1].h=1;
-	G[3].S[0].dt[0].time[1].m=1;
+	G[3].S[0].dt[0].time[0].h=10;
+	G[3].S[0].dt[0].time[0].m=00;
+	G[3].S[0].dt[0].time[1].h=16;
+	G[3].S[0].dt[0].time[1].m=00;
 
 
 	G[3].S[0].dt[1].d=31;
 	G[3].S[0].dt[1].m=10;
 	G[3].S[0].dt[1].y=2018;
-	G[3].S[0].dt[1].time[0].h=1;
-	G[3].S[0].dt[1].time[0].m=1;
-	G[3].S[0].dt[1].time[1].h=1;
-	G[3].S[0].dt[1].time[1].m=1;
+	G[3].S[0].dt[1].time[0].h=13;
+	G[3].S[0].dt[1].time[0].m=00;
+	G[3].S[0].dt[1].time[1].h=18;
+	G[3].S[0].dt[1].time[1].m=00;
 	G[3].S[0].noDates_aval=2;
 
 
 	G[3].S[1].dt[0].d=21;
 	G[3].S[1].dt[0].m=10;
 	G[3].S[1].dt[0].y=2018;
-	G[3].S[1].dt[0].time[0].h=1;
-	G[3].S[1].dt[0].time[0].m=1;
-	G[3].S[1].dt[0].time[1].h=1;
-	G[3].S[1].dt[0].time[1].m=1;
+	G[3].S[1].dt[0].time[0].h=11;
+	G[3].S[1].dt[0].time[0].m=00;
+	G[3].S[1].dt[0].time[1].h=15;
+	G[3].S[1].dt[0].time[1].m=00;
 
 
 
 	G[3].S[1].dt[1].d=23;
 	G[3].S[1].dt[1].m=10;
 	G[3].S[1].dt[1].y=2018;
-	G[3].S[1].dt[1].time[0].h=1;
-	G[3].S[1].dt[1].time[0].m=1;
-	G[3].S[1].dt[1].time[1].h=1;
-	G[3].S[1].dt[1].time[1].m=1;
+	G[3].S[1].dt[1].time[0].h=07;
+	G[3].S[1].dt[1].time[0].m=00;
+	G[3].S[1].dt[1].time[1].h=12;
+	G[3].S[1].dt[1].time[1].m=00;
 	G[3].S[1].noDates_aval=2;
 
 	G[3].S[0].s_d[0].d=01;
@@ -300,63 +291,63 @@ int main()
 	G[4].S[0].dt[0].d=28;
 	G[4].S[0].dt[0].m=10;
 	G[4].S[0].dt[0].y=2018;
-	G[4].S[0].dt[0].time[0].h=1;
-	G[4].S[0].dt[0].time[0].m=1;
-	G[4].S[0].dt[0].time[1].h=1;
-	G[4].S[0].dt[0].time[1].m=1;
+	G[4].S[0].dt[0].time[0].h=10;
+	G[4].S[0].dt[0].time[0].m=00;
+	G[4].S[0].dt[0].time[1].h=14;
+	G[4].S[0].dt[0].time[1].m=00;
 
 	G[4].S[0].dt[1].d=29;
 	G[4].S[0].dt[1].m=10;
 	G[4].S[0].dt[1].y=2018;
-	G[4].S[0].dt[1].time[0].h=1;
-	G[4].S[0].dt[1].time[0].m=1;
-	G[4].S[0].dt[1].time[1].h=1;
-	G[4].S[0].dt[1].time[1].m=1;
+	G[4].S[0].dt[1].time[0].h=11;
+	G[4].S[0].dt[1].time[0].m=00;
+	G[4].S[0].dt[1].time[1].h=12;
+	G[4].S[0].dt[1].time[1].m=00;
 	G[4].S[0].noDates_aval=2;
 
 	G[4].S[1].dt[0].d=21;
 	G[4].S[1].dt[0].m=10;
 	G[4].S[1].dt[0].y=2018;
-	G[4].S[1].dt[0].time[0].h=1;
-	G[4].S[1].dt[0].time[0].m=1;
-	G[4].S[1].dt[0].time[1].h=1;
-	G[4].S[1].dt[0].time[1].m=1;
+	G[4].S[1].dt[0].time[0].h=15;
+	G[4].S[1].dt[0].time[0].m=00;
+	G[4].S[1].dt[0].time[1].h=16;
+	G[4].S[1].dt[0].time[1].m=00;
 
 
 	G[4].S[1].dt[1].d=28;
 	G[4].S[1].dt[1].m=10;
 	G[4].S[1].dt[1].y=2018;
-	G[4].S[1].dt[1].time[0].h=1;
-	G[4].S[1].dt[1].time[0].m=1;
-	G[4].S[1].dt[1].time[1].h=1;
-	G[4].S[1].dt[1].time[1].m=1;
+	G[4].S[1].dt[1].time[0].h=11;
+	G[4].S[1].dt[1].time[0].m=00;
+	G[4].S[1].dt[1].time[1].h=13;
+	G[4].S[1].dt[1].time[1].m=00;
 
 
 	G[4].S[1].dt[2].d=27;
 	G[4].S[1].dt[2].m=10;
 	G[4].S[1].dt[2].y=2018;
-	G[4].S[1].dt[2].time[0].h=1;
-	G[4].S[1].dt[2].time[0].m=1;
-	G[4].S[1].dt[2].time[1].h=1;
-	G[4].S[1].dt[2].time[1].m=1;
+	G[4].S[1].dt[2].time[0].h=16;
+	G[4].S[1].dt[2].time[0].m=00;
+	G[4].S[1].dt[2].time[1].h=19;
+	G[4].S[1].dt[2].time[1].m=00;
 	G[4].S[1].noDates_aval=3;
 
 	G[4].S[2].dt[0].d=28;
 	G[4].S[2].dt[0].m=10;
 	G[4].S[2].dt[0].y=2018;
-	G[4].S[2].dt[0].time[0].h=1;
-	G[4].S[2].dt[0].time[0].m=1;
-	G[4].S[2].dt[0].time[1].h=1;
-	G[4].S[2].dt[0].time[1].m=1;
+	G[4].S[2].dt[0].time[0].h=11;
+	G[4].S[2].dt[0].time[0].m=00;
+	G[4].S[2].dt[0].time[1].h=15;
+	G[4].S[2].dt[0].time[1].m=00;
 
 
 	G[4].S[2].dt[1].d=29;
 	G[4].S[2].dt[1].m=10;
 	G[4].S[2].dt[1].y=2018;
-	G[4].S[2].dt[1].time[0].h=1;
-	G[4].S[2].dt[1].time[0].m=1;
-	G[4].S[2].dt[1].time[1].h=1;
-	G[4].S[2].dt[1].time[1].m=1;
+	G[4].S[2].dt[1].time[0].h=06;
+	G[4].S[2].dt[1].time[0].m=00;
+	G[4].S[2].dt[1].time[1].h=07;
+	G[4].S[2].dt[1].time[1].m=00;
 	G[4].S[2].noDates_aval=2;
 
 
@@ -386,37 +377,37 @@ int main()
 	G[5].S[0].dt[0].d=29;
 	G[5].S[0].dt[0].m=10;
 	G[5].S[0].dt[0].y=2018;
-	G[5].S[0].dt[0].time[0].h=1;
-	G[5].S[0].dt[0].time[0].m=1;
-	G[5].S[0].dt[0].time[1].h=1;
-	G[5].S[0].dt[0].time[1].m=1;
+	G[5].S[0].dt[0].time[0].h=19;
+	G[5].S[0].dt[0].time[0].m=00;
+	G[5].S[0].dt[0].time[1].h=22;
+	G[5].S[0].dt[0].time[1].m=00;
 
 
 	G[5].S[0].dt[1].d=31;
 	G[5].S[0].dt[1].m=10;
 	G[5].S[0].dt[1].y=2018;
-	G[5].S[0].dt[1].time[0].h=1;
-	G[5].S[0].dt[1].time[0].m=1;
-	G[5].S[0].dt[1].time[1].h=1;
-	G[5].S[0].dt[1].time[1].m=1;
+	G[5].S[0].dt[1].time[0].h=13;
+	G[5].S[0].dt[1].time[0].m=00;
+	G[5].S[0].dt[1].time[1].h=15;
+	G[5].S[0].dt[1].time[1].m=00;
 	G[5].S[0].noDates_aval=2;
 
 	G[5].S[1].dt[0].d=22;
 	G[5].S[1].dt[0].m=10;
 	G[5].S[1].dt[0].y=2018;
-	G[5].S[1].dt[0].time[0].h=1;
-	G[5].S[1].dt[0].time[0].m=1;
-	G[5].S[1].dt[0].time[1].h=1;
-	G[5].S[1].dt[0].time[1].m=1;
+	G[5].S[1].dt[0].time[0].h=19;
+	G[5].S[1].dt[0].time[0].m=00;
+	G[5].S[1].dt[0].time[1].h=23;
+	G[5].S[1].dt[0].time[1].m=00;
 
 
 	G[5].S[1].dt[1].d=23;
 	G[5].S[1].dt[1].m=10;
 	G[5].S[1].dt[1].y=2018;
-	G[5].S[1].dt[1].time[0].h=1;
-	G[5].S[1].dt[1].time[0].m=1;
-	G[5].S[1].dt[1].time[1].h=1;
-	G[5].S[1].dt[1].time[1].m=1;
+	G[5].S[1].dt[1].time[0].h=10;
+	G[5].S[1].dt[1].time[0].m=00;
+	G[5].S[1].dt[1].time[1].h=14;
+	G[5].S[1].dt[1].time[1].m=00;
 	G[5].S[1].noDates_aval=2;
 
 	G[5].S[0].s_d[0].d=20;
@@ -429,6 +420,7 @@ int main()
 
 	G[5].S[0].rate=1;
 	G[5].S[1].rate=1;
+
 	
 	
 		
@@ -474,7 +466,23 @@ int main()
 	//=printf("Enter City, start date and end date\n");
 	//=scanf("%s%d%d%d%d%d%d",city,&tDate[0].d,&tDate[0].m,&tDate[0].y,&tDate[1].d,&tDate[1].m,&tDate[1].y);
 	//=getFixturesinCity(city);
-	getFixturesSortedOnDate();
+	
+	
+	//getFixturesSortedOnDate();
+	
+	//=printf("Enter Sport, date and particular time\n");
+	//=scanf("%s%d%d%d%d%d",sport,&tempD.d,&tempD.m,&tempD.y,&tempD.time[0].h,&tempD.time[0].m);
+	//=isAvailable(sport);
+	
+	//=printf("Enter Sport, start date and end date\n");
+	//=scanf("%s%d%d%d%d%d%d",sport,&tDate[0].d,&tDate[0].m,&tDate[0].y,&tDate[1].d,&tDate[1].m,&tDate[1].y);
+	//=FindLocationForGameEvents(sport);
+	
+	printf("Enter Sport, date and particular time\n");
+	scanf("%s%d%d%d%d%d",sport,&tempD.d,&tempD.m,&tempD.y,&tempD.time[0].h,&tempD.time[0].m);
+	FindLocationForGame(sport);
+	
+	
 	for(i=0;i<total;i++)
 	{
 		for(j=0;j<G[i].noOfSports;j++)
@@ -953,14 +961,113 @@ getFixturesSortedOnDate()
 	 
 }
 
+isAvailable(char sport[])
+{
+	int i,j,k,found,once=0;
+	for(i=0;i<total;i++)
+	{
+		for(j=0;j<G[i].noOfSports;j++)
+		{
+			if(strcmp(G[i].S[j].name,sport)==0)
+			{
+				found=0;
+				for(k=0;k<G[i].S[j].noDates_aval&&found==0;k++)
+				{
+					if((tempD.d==G[i].S[j].dt[k].d)&&(tempD.m==G[i].S[j].dt[k].m)&&(tempD.y==G[i].S[j].dt[k].y))
+					{
+				
+						if((G[i].S[j].dt[k].time[0].h<=tempD.time[0].h)&&(G[i].S[j].dt[k].time[0].m<=tempD.time[0].m)&&\
+						(G[i].S[j].dt[k].time[1].h>tempD.time[0].h)||(G[i].S[j].dt[k].time[1].h==tempD.time[0].h)&&(G[i].S[j].dt[k].time[1].m>tempD.time[0].m))
+						{
+							printf("%s,%s,%s,%s\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name);	
+							found=1;
+							once=1;		
+						}
+					}
+					
+				}
+			}
+		}
+	}
+	if(once==0)
+		printf("Not Available\n");
+}
+
+FindLocationForGameEvents(char sport[])
+{
+	int i,j,k,once=0;
+	for(i=0;i<total;i++)
+	{
+		for(j=0;j<G[i].noOfSports;j++)
+		{
+			if(strcmp(G[i].S[j].name,sport)==0)
+			{
+				if(((G[i].S[j].s_d[0].d>=tDate[0].d)&&(G[i].S[j].s_d[0].m>=tDate[0].m)&&(G[i].S[j].s_d[0].y>=tDate[0].y)&&(G[i].S[j].s_d[0].d<=tDate[1].d)\
+				&&(G[i].S[j].s_d[0].m<=tDate[1].m)&&(G[i].S[j].s_d[0].y<=tDate[1].y)))	
+				{
+					printf("%s,%s,%s,%s %d-%d-%d\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name,G[i].S[j].s_d[0].d,G[i].S[j].s_d[0].m,G[i].S[j].s_d[0].y);
+					once=1;
+				}
+				else if((G[i].S[j].s_d[0].y>=tDate[0].y)&&(G[i].S[j].s_d[0].y<tDate[1].y))
+				{
+					printf("%s,%s,%s,%s %d-%d-%d\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name,G[i].S[j].s_d[0].d,G[i].S[j].s_d[0].m,G[i].S[j].s_d[0].y);
+					once=1;
+				}
+				else if((G[i].S[j].s_d[0].y==tDate[0].y)&&(G[i].S[j].s_d[0].y==tDate[1].y))
+				{
+					if((G[i].S[j].s_d[0].m>=tDate[0].m)&&(G[i].S[j].s_d[0].m<tDate[1].m)&&(G[i].S[j].s_d[0].d>=tDate[0].d))
+					{
+						printf("%s,%s,%s,%s %d-%d-%d\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name,G[i].S[j].s_d[0].d,G[i].S[j].s_d[0].m,G[i].S[j].s_d[0].y);
+						once=1;
+					}
+					else if((G[i].S[j].s_d[0].m>tDate[0].m)&&(G[i].S[j].s_d[0].d<=tDate[1].d)&&(G[i].S[j].s_d[0].m<=tDate[1].m))
+					{
+						printf("%s,%s,%s,%s %d-%d-%d\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name,G[i].S[j].s_d[0].d,G[i].S[j].s_d[0].m,G[i].S[j].s_d[0].y);
+						once=1;
+					}
+				}
+			}
+		}
+	}
+	if(once==0)
+		printf("Not Available\n");
+}
 
 
-
-
-
-
-
-
+FindLocationForGame(char sport[])
+{
+	int i,j,k,found,once=0;
+	for(i=0;i<total;i++)
+	{
+		for(j=0;j<G[i].noOfSports;j++)
+		{
+			if(strcmp(G[i].S[j].name,sport)==0)
+			{
+				found=0;
+				for(k=0;k<G[i].S[j].noDates_aval&&found==0;k++)
+				{
+					if((tempD.d!=G[i].S[j].s_d[0].d)||(tempD.m!=G[i].S[j].s_d[0].m)||(tempD.y!=G[i].S[j].s_d[0].y))
+					{
+						//it will enter only if the game is not scheduled on given date
+						if((tempD.d==G[i].S[j].dt[k].d)&&(tempD.m==G[i].S[j].dt[k].m)&&(tempD.y==G[i].S[j].dt[k].y))	
+						{
+							if((G[i].S[j].dt[k].time[0].h<=tempD.time[0].h)&&(G[i].S[j].dt[k].time[0].m<=tempD.time[0].m)&&\
+							(G[i].S[j].dt[k].time[1].h>tempD.time[0].h)||(G[i].S[j].dt[k].time[1].h==tempD.time[0].h)&&(G[i].S[j].dt[k].time[1].m>tempD.time[0].m))
+							{
+								printf("%s,%s,%s,%s\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name);	
+								found=1;
+								once=1;		
+							}
+						}
+					}
+					
+				}
+			}
+		}
+	}
+	if(once==0)
+		printf("Not Available\n");
+}
 
 
 
