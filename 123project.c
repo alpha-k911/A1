@@ -52,8 +52,8 @@ struct ground
 int total=6,size=100,c=0;
 int main()
 {
-	int i,j,n,hour,min;
-	char city[10],sport[50];
+	int i,j,n,hour,min,input;
+	char city[10],sport[50],ground[50],state[50];
 	strcpy(G[0].gName,"rajiv");
 	strcpy(G[0].city,"hyderabad");
 	strcpy(G[0].state,"rajasthan");
@@ -291,7 +291,7 @@ int main()
 	strcpy(G[4].S[1].name,"football");
 	strcpy(G[4].S[2].name,"handball");
 	G[4].noOfSports=3;
-	G[4].S[0].dt[0].d=28;
+	G[4].S[0].dt[0].d=22;
 	G[4].S[0].dt[0].m=10;
 	G[4].S[0].dt[0].y=2018;
 	G[4].S[0].dt[0].time[0].h=10;
@@ -299,7 +299,7 @@ int main()
 	G[4].S[0].dt[0].time[1].h=14;
 	G[4].S[0].dt[0].time[1].m=00;
 
-	G[4].S[0].dt[1].d=22;
+	G[4].S[0].dt[1].d=28;
 	G[4].S[0].dt[1].m=10;
 	G[4].S[0].dt[1].y=2018;
 	G[4].S[0].dt[1].time[0].h=11;
@@ -354,7 +354,7 @@ int main()
 	G[4].S[2].noDates_aval=2;
 
 
-	G[4].S[0].s_d[0].d=20;
+	G[4].S[0].s_d[0].d=22;
 	G[4].S[0].s_d[0].m=10;
 	G[4].S[0].s_d[0].y=2018;
 	G[4].S[1].s_d[0].d=01;
@@ -423,104 +423,205 @@ int main()
 
 	G[5].S[0].rate=50;
 	G[5].S[1].rate=150;
-
-	
-	
-		
 	for(i=6;i<100;i++)	
 	strcpy(G[i].gName,"null");
 	
-	//sort();
-	
-	//initialSort(G,8);
-	
-	//getGroundInfo("jaipur");
-	
-	//addSport("rajiv","jaipur","hockey");
-	
-	//deleteSport("rajiv","jaipur","cricket");
-	
-	/*scanf("%s",temp.gName);
-	scanf("%s",temp.city);
-	scanf("%s",temp.state);
-	scanf("%d",&temp.noOfSports);
-	for(i=0;i<temp.noOfSports;i++)
-	{
-		scanf("%s",temp.S[i].name);
-		//scanf("%d%d%d%d%d%d%d%d%d%d",&temp.S[i].dt[0].d,&temp.S[i].dt[0].m,&temp.S[i].dt[0].y,&temp.S[i].dt[1].d,&temp.S[i].dt[1].m,&temp.S[i].dt[1].y,&temp.S[i].time[0].h,&temp.S[i].time[0].m,&temp.S[i].time[1].h,&temp.S[i].time[1].m);
-		//scanf("%s",temp.gName);
-	
-	}
-	*/
-	
-	
-	//addGround();
-	
-	//deleteGround("sms","nag1pur");
-	
-	//sportWithGround("cricket");
-	
-	//getFixturesinState("telangana");
-
-	//UniqueSport("kcr","hyderabad");
-
-	//getFixturesSortedonState(G,"telangana");
-	
-	//=printf("Enter City, start date and end date\n");
-	//=scanf("%s%d%d%d%d%d%d",city,&tDate[0].d,&tDate[0].m,&tDate[0].y,&tDate[1].d,&tDate[1].m,&tDate[1].y);
-	//=getFixturesinCity(city);
-	
-	
-	//getFixturesSortedOnDate();
-	
-	//=printf("Enter Sport, date and particular time\n");
-	//=scanf("%s%d%d%d%d%d",sport,&tempD.d,&tempD.m,&tempD.y,&tempD.time[0].h,&tempD.time[0].m);
-	//=isAvailable(sport);
-	
-	//=printf("Enter Sport, start date and end date\n");
-	//=scanf("%s%d%d%d%d%d%d",sport,&tDate[0].d,&tDate[0].m,&tDate[0].y,&tDate[1].d,&tDate[1].m,&tDate[1].y);
-	//=FindLocationForGameEvents(sport);
-	
-	//=printf("Enter Sport, date and particular time\n");
-	//=scanf("%s%d%d%d%d%d",sport,&tempD.d,&tempD.m,&tempD.y,&tempD.time[0].h,&tempD.time[0].m);
-	//=FindLocationForGame(sport);
-	
-	
-	//=printf("Enter Sport, start date and end date\n");
-	//=scanf("%s%d%d%d%d%d%d",sport,&tDate[0].d,&tDate[0].m,&tDate[0].y,&tDate[1].d,&tDate[1].m,&tDate[1].y);
-	//=FindLocationForGameInTimeRange(sport);
-
-	/*
 	struct ground Ground[10];
-	printf("enter no. of grounds to scan: ");
-	scanf("%d",&n);
-	printf("Enter the ground names: ");
-	for(i=0;i<n;i++)
-		scanf("%s",&Ground[i].name);
-	printf("Enter Sport and date\n");
-	scanf("%s%d%d%d",sport,&tempD.d,&tempD.m,&tempD.y);
-	ClashOfMatches(Ground,tempD,sport,n);*/
+	struct ground games[10];
+					
+	//Below statements are for asking user for particular function call
+	printf("1.getGroundInfo()\n");
+	printf("2.addSport()\n");
+	printf("3.deleteSport()\n");
+	printf("4.addGround()\n");
+	printf("5.deleteGround()\n");
+	printf("6.updateGround()\n");
+	printf("7.getFixturesinCity()\n");
+	printf("8.getFixturesinState()\n");
+	printf("9.getFixturesSortedonDate()\n");
+	printf("10.getFixturesSortedonState()\n");
+	printf("11.isAvailable()\n");
+	printf("12.UniqueSport()\n");
+	printf("13.SportwithGround()\n");
+	printf("14.FindLocationsForGameEvents()\n");
+	printf("15.FindLocationsForGame()\n");
+	printf("16.FindLocationsForGameInTimeRange()\n");
+	printf("17.ClashOfMatches()\n");
+	printf("18.GiveListOfGroundsHavingMinOneMatch()\n");
+	printf("19.GiveListOfGroundsHavingAtLeastKMatches()\n");
+	printf("20.SortOnPriceForAGame()\n");
+	printf("21.FindGamesSchedule()\n");
+	printf("Enter the no. to run respective function:");
+	scanf("%d",&input);
 	
-	/*struct ground games[10];
-	printf("enter no. of games to scan: ");
-	scanf("%d",&n);
-	printf("Enter the games names: ");
-	for(i=0;i<n;i++)
-		scanf("%s",&games[i].name);
-	printf("Enter city and date\n");
-	scanf("%s%d%d%d",city,&tempD.d,&tempD.m,&tempD.y);
-	GiveListOfGroundsHavingMinOneMatch(games,tempD,city,n);*/
+	initialSort(G,total);
+	switch(input)
+	{
+		case 1:	printf("Enter City: ");
+			scanf("%s",&city);
+			getGroundInfo(city);
+			break;
+			
+		case 2: printf("Enter ground Name, city, sport: ");
+			scanf("%s%s%s",&ground,&city,&sport);
+			addSport(ground,city,sport);
+			break;
+			
+		case 3:	printf("Enter ground Name, city, sport: ");
+			scanf("%s%s%s",&ground,&city,&sport);
+			deleteSport(ground,city,sport);
+			break;
+			
+		case 4: printf("Enter Ground Name: \n");
+			scanf("%s",temp.gName);
+			printf("Enter City Name: \n");
+			scanf("%s",temp.city);
+			printf("Enter State Name: \n");
+			scanf("%s",temp.state);
+			printf("Enter No. of Sports: \n");
+			scanf("%d",&temp.noOfSports);
+			for(i=0;i<temp.noOfSports;i++)
+			{
+				printf("Enter Sport: \n");
+				scanf("%s",temp.S[i].name);
+				printf("Enter No. of Available dates: \n");
+				scanf("%d",&temp.S[i].noDates_aval);
+				printf("Enter date, start time and end time (time in hour and min format): ");
+				for(j=0;j<temp.S[i].noDates_aval;j++)
+		scanf("%d%d%d%d%d%d%d",&temp.S[i].dt[j].d,&temp.S[i].dt[j].m,&temp.S[i].dt[j].y,&temp.S[i].dt[j].time[0].h,&temp.S[i].dt[j].time[0].m,&temp.S[i].dt[j].time[1].h,&temp.S[i].dt[j].time[1].m);
+				printf("Enter scheduled date: \n");
+				scanf("%d%d%d",&temp.S[i].s_d[0].d,&temp.S[i].s_d[0].m,&temp.S[i].s_d[0].y);
+			}
+			addGround();
+			break;
+			
+		case 5: printf("Enter ground name, city: ");
+			scanf("%s%s",&ground,&city);
+			deleteGround(ground,city);
+			break;
+			//sort();			
+			//deleteGround("sms","nag1pur");
+			
+		case 6:	printf("We coundn't complete the code for this function\n");
+			//updateGround();
+			break;
+		
+		case 7:	printf("Enter City, start date and end date\n");
+			scanf("%s%d%d%d%d%d%d",city,&tDate[0].d,&tDate[0].m,&tDate[0].y,&tDate[1].d,&tDate[1].m,&tDate[1].y);
+			getFixturesinCity(city);
+			break;
+			
+		case 8:	printf("Enter state\n");
+			scanf("%s",&state);
+			getFixturesinState(state);
+			break;
+
+		case 9:	getFixturesSortedOnDate();
+			break;
+		
+		case 10:getFixturesSortedonState(G,state);
+			break;
+			
+		case 11:printf("Enter Sport, date and particular time\n");
+			scanf("%s%d%d%d%d%d",sport,&tempD.d,&tempD.m,&tempD.y,&tempD.time[0].h,&tempD.time[0].m);
+			isAvailable(sport);
+			break;
+			
+		case 12:printf("Enter ground name and city\n");
+			scanf("%s%s",&ground,&city);
+			UniqueSport(ground,city);
+			break;
+
+		case 13:printf("Enter sport\n");
+			scanf("%s",&sport);
+			sportWithGround(sport);
+			break;
+		
+		case 14:printf("Enter Sport, start date and end date\n");
+			scanf("%s%d%d%d%d%d%d",sport,&tDate[0].d,&tDate[0].m,&tDate[0].y,&tDate[1].d,&tDate[1].m,&tDate[1].y);
+			FindLocationForGameEvents(sport);
+			break;
+			
+		case 15:printf("Enter Sport, date and particular time\n");
+			scanf("%s%d%d%d%d%d",sport,&tempD.d,&tempD.m,&tempD.y,&tempD.time[0].h,&tempD.time[0].m);
+			FindLocationForGame(sport);
+			break;
+			
+			
+		case 16:printf("Enter Sport, start date and end date\n");
+			scanf("%s%d%d%d%d%d%d",sport,&tDate[0].d,&tDate[0].m,&tDate[0].y,&tDate[1].d,&tDate[1].m,&tDate[1].y);
+			FindLocationForGameInTimeRange(sport);
+			break;
+
+		case 17:printf("enter no. of grounds to scan: ");
+			scanf("%d",&n);
+			printf("Enter the ground names: ");
+			for(i=0;i<n;i++)
+				scanf("%s",&Ground[i].name);
+			printf("Enter Sport and date\n");
+			scanf("%s%d%d%d",sport,&tempD.d,&tempD.m,&tempD.y);
+			ClashOfMatches(Ground,tempD,sport,n);
+			break;
+			
+		case 18:printf("enter no. of games to scan: ");
+			scanf("%d",&n);
+			printf("Enter the games names: ");
+			for(i=0;i<n;i++)
+				scanf("%s",&games[i].name);
+			printf("Enter city and date\n");
+			scanf("%s%d%d%d",city,&tempD.d,&tempD.m,&tempD.y);
+			GiveListOfGroundsHavingMinOneMatch(games,tempD,city,n);
+			break;
+			
+		case 19:printf("We have considered only one scheduled match as given in question hence it is similar to 18th(r) function i.e.,GiveListOfGroundsHavingMinOneMatch()\n ");
+			//GiveListOfGroundsHavingAtLeastKMatches();
+			break;
+			
+		case 20:printf("Enter sport, date and time\n");
+			scanf("%s%d%d%d%d%d",sport,&tempD.d,&tempD.m,&tempD.y,&hour,&min);
+			SortOnPriceForAGame(sport,hour,min);
+			break;
+		
+		case 21:printf("We coundn't complete the code for this function\n");
+			//FindGamesSchedule();
+			break;
+			
+		default : printf("Enter a valid input\n");
+			break;
+			
+	}
 	
-	printf("Enter sport, date and time\n");
-	scanf("%s%d%d%d%d%d",sport,&tempD.d,&tempD.m,&tempD.y,&hour,&min);
-	SortOnPriceForAGame(sport,hour,min);
-	
+	printf("\n------------RECORDS-------------\n");
 	for(i=0;i<total;i++)
 	{
 		for(j=0;j<G[i].noOfSports;j++)
 		printf("%s,%s,%s,%s %d-%d-%d\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name,G[i].S[j].s_d[0].d,G[i].S[j].s_d[0].m,G[i].S[j].s_d[0].y);	
 	}
 }
+
+initialSort(struct grounds G[],int n)
+{
+	int i,j;
+	for (i = 1; i < n; i++)
+	{
+  		for (j = 0; j < n - i; j++)
+		{
+ 			if (strcmp(G[j].gName, G[j + 1].gName) > 0)
+			{
+ 				temp = G[j];
+ 				G[j] = G[j + 1];
+ 				G[j + 1] = temp;
+ 			}
+			else if((strcmp(G[j].gName, G[j + 1].gName)==0)&&(strcmp(G[j].city,G[j+1].city)>0))
+			{	
+				temp=G[j];
+				G[j]=G[j+1];
+				G[j+1]=temp;		
+			}
+		}
+	}
+}
+
 
 void getGroundInfo(char city[])
 {
@@ -665,7 +766,7 @@ void swap_Sports(int pos_Ground,int i,int j)
 }
 
 
-void addGround() //time to be added
+void addGround() 
 {
 
 	int found=0,i,j,pos;
@@ -731,9 +832,10 @@ void deleteGround(char GroundName[],char city[])
 void sportWithGround(char sport[])
 {
 	int i,j,k;
+	c=0;
 	for(k=0;k<total;k++)
 	{
-		for (j = 0; j < G[k].noOfSports - i; j++)
+		for (j = 0; j < G[k].noOfSports; j++)
 		{
  			if (strcmp(G[k].S[j].name, sport)==0)
 			{
@@ -1005,18 +1107,20 @@ void isAvailable(char sport[])
 				found=0;
 				for(k=0;k<G[i].S[j].noDates_aval&&found==0;k++)
 				{
-					if((tempD.d==G[i].S[j].dt[k].d)&&(tempD.m==G[i].S[j].dt[k].m)&&(tempD.y==G[i].S[j].dt[k].y))
+					if((tempD.d!=G[i].S[j].s_d[0].d)||(tempD.m!=G[i].S[j].s_d[0].m)||(tempD.y!=G[i].S[j].s_d[0].y))
 					{
-				
-						if((G[i].S[j].dt[k].time[0].h<=tempD.time[0].h)&&(G[i].S[j].dt[k].time[0].m<=tempD.time[0].m)&&\
-						(G[i].S[j].dt[k].time[1].h>tempD.time[0].h)||((G[i].S[j].dt[k].time[1].h==tempD.time[0].h)&&(G[i].S[j].dt[k].time[1].m>tempD.time[0].m)))
+						if((tempD.d==G[i].S[j].dt[k].d)&&(tempD.m==G[i].S[j].dt[k].m)&&(tempD.y==G[i].S[j].dt[k].y))
 						{
-							printf("%s,%s,%s,%s\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name);	
-							found=1;
-							once=1;		
+					
+							if((G[i].S[j].dt[k].time[0].h<=tempD.time[0].h)&&(G[i].S[j].dt[k].time[0].m<=tempD.time[0].m)&&\
+							(G[i].S[j].dt[k].time[1].h>tempD.time[0].h)||((G[i].S[j].dt[k].time[1].h==tempD.time[0].h)&&(G[i].S[j].dt[k].time[1].m>tempD.time[0].m)))
+							{
+								printf("%s,%s,%s,%s\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name);	
+								found=1;
+								once=1;		
+							}
 						}
 					}
-					
 				}
 			}
 		}
@@ -1251,6 +1355,72 @@ void SortOnPriceForAGame(char sport[],int hour,int min)
 	
 }
 
+getFixturesSortedonState(struct grounds G[])
+{
+		
+	//sortSC(G,total);
+	int i,j,n;
+
+	n=total;
+	for (i = 1; i < n; i++)
+	{
+  		for (j = 0; j < n - i; j++)
+		{
+ 			if (strcmp(G[j].state, G[j + 1].state) > 0)
+			{
+ 				temp = G[j];
+ 				G[j] = G[j + 1];
+ 				G[j + 1] = temp;
+ 			}
+			else if((strcmp(G[j].state, G[j + 1].state)==0)&&(strcmp(G[j].city,G[j+1].city)>0))
+			{	
+				temp=G[j];
+				G[j]=G[j+1];
+				G[j+1]=temp;		
+			}
+		}
+	}
+	for(i=0;i<total;i++)
+	{
+		for(j=0;j<G[i].noOfSports;j++)
+		printf("%s,%s,%s,%s\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name);	
+	}
+	
+
+}
+
+sortSC(struct grounds G[],int n)
+{
+	int i,j;
+	for (i = 1; i < n; i++)
+	{
+  		for (j = 0; j < n - i; j++)
+		{
+ 			if (strcmp(G[j].state, G[j + 1].state) > 0)
+			{
+ 				temp = G[j];
+
+ 				G[j] = G[j + 1];
+ 				G[j + 1] = temp;
+ 			}
+
+			else if((strcmp(G[j].state, G[j + 1].state)==0)&&(strcmp(G[j].city,G[j+1].city)>0))
+			{	
+				temp=G[j];
+
+				G[j]=G[j+1];
+				G[j+1]=temp;		
+			}
+
+		}
+	}
+	for(i=0;i<total;i++)
+	{
+		for(j=0;j<G[i].noOfSports;j++)
+		printf("%s,%s,%s,%s\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name);	
+	}
+
+}
 
 
 
@@ -1281,9 +1451,11 @@ void SortOnPriceForAGame(char sport[],int hour,int min)
 
 
 
-
-
-
+	
+	
+	
+	
+	//addGround();
 
 
 
