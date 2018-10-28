@@ -482,8 +482,11 @@ int main()
 			scanf("%d",&temp.noOfSports);
 			for(i=0;i<temp.noOfSports;i++)
 			{
-				printf("Enter Sport: \n");
+				printf("Enter details for %dth sport: \n",i+1);
+				printf("Enter %d_Sport: \n",i+1);
 				scanf("%s",temp.S[i].name);
+				printf("Enter rate per hour: \n");
+				scanf("%f",&temp.S[i].rate);
 				printf("Enter No. of Available dates: \n");
 				scanf("%d",&temp.S[i].noDates_aval);
 				printf("Enter date, start time and end time (time in hour and min format): ");
@@ -502,8 +505,30 @@ int main()
 			//sort();			
 			//deleteGround("sms","nag1pur");
 			
-		case 6:	printf("We coundn't complete the code for this function\n");
-			//updateGround();
+		case 6:	printf("Enter Ground Name: \n");
+			scanf("%s",temp.gName);
+			printf("Enter City Name: \n");
+			scanf("%s",temp.city);
+			printf("Enter State Name: \n");
+			scanf("%s",temp.state);
+			printf("Enter No. of Sports: \n");
+			scanf("%d",&temp.noOfSports);
+			for(i=0;i<temp.noOfSports;i++)
+			{
+				printf("Enter details for %dth sport: \n",i+1);
+				printf("Enter %d_Sport: \n",i+1);
+				scanf("%s",temp.S[i].name);
+				printf("Enter rate per hour: \n");
+				scanf("%f",&temp.S[i].rate);
+				printf("Enter No. of Available dates: \n");
+				scanf("%d",&temp.S[i].noDates_aval);
+				printf("Enter date, start time and end time (time in hour and min format): ");
+				for(j=0;j<temp.S[i].noDates_aval;j++)
+		scanf("%d%d%d%d%d%d%d",&temp.S[i].dt[j].d,&temp.S[i].dt[j].m,&temp.S[i].dt[j].y,&temp.S[i].dt[j].time[0].h,&temp.S[i].dt[j].time[0].m,&temp.S[i].dt[j].time[1].h,&temp.S[i].dt[j].time[1].m);
+				printf("Enter scheduled date: \n");
+				scanf("%d%d%d",&temp.S[i].s_d[0].d,&temp.S[i].s_d[0].m,&temp.S[i].s_d[0].y);
+			}
+			updateGround();
 			break;
 		
 		case 7:	printf("Enter City, start date and end date\n");
@@ -828,6 +853,30 @@ void deleteGround(char GroundName[],char city[])
 	
 }
 
+
+void updateGround() 
+{
+
+	int found=0,i,j,pos;
+	for(i=0;i<total&&found==0;i++)
+	{
+		if((strcmp(G[i].gName,temp.gName)==0)&&(strcmp(G[i].city,temp.city)==0))
+		{
+			found=1;
+			pos=i;
+		}
+	}
+	if(found==0)
+	{
+		printf("FAILURE\n");
+	}
+	else
+	{
+		G[pos]=temp;
+		//details should be added
+		printf("SUCCESS\n");
+	}
+}
 
 void sportWithGround(char sport[])
 {
