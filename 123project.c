@@ -10,7 +10,7 @@
 struct time
 {
 	int h,m;
-};
+}tempT;
 
 struct date
 {
@@ -23,7 +23,7 @@ struct sports
 	char name[50];
 	struct date dt[10];
 	struct date s_d[1];
-	int rate;
+	float rate;
 	struct time time[2];
 	int noDates_aval;
 }tempS;
@@ -44,13 +44,18 @@ struct grounds{
 }temp,G[100],req[100];
 
 
+struct ground
+{
+	char name[50];
+};
+
 int total=6,size=100,c=0;
 int main()
 {
-	int i,j;
+	int i,j,n,hour,min;
 	char city[10],sport[50];
 	strcpy(G[0].gName,"rajiv");
-	strcpy(G[0].city,"jaipur");
+	strcpy(G[0].city,"hyderabad");
 	strcpy(G[0].state,"rajasthan");
 	strcpy(G[0].S[0].name,"cricket");
 	strcpy(G[0].S[1].name,"football");
@@ -101,7 +106,7 @@ int main()
 	G[0].S[1].dt[1].time[1].m=00;
 	G[0].S[1].noDates_aval=2;
 
-	G[0].S[2].dt[0].d=28;
+	G[0].S[2].dt[0].d=24;
 	G[0].S[2].dt[0].m=10;
 	G[0].S[2].dt[0].y=2018;
 	G[0].S[2].dt[0].time[0].h=13;
@@ -111,7 +116,7 @@ int main()
 
 
 	G[0].S[2].dt[1].d=29;
-	G[0].S[2].dt[1].m=11;
+	G[0].S[2].dt[1].m=10;
 	G[0].S[2].dt[1].y=2018;
 	G[0].S[2].dt[1].time[0].h=18;
 	G[0].S[2].dt[1].time[0].m=00;
@@ -120,22 +125,20 @@ int main()
 	G[0].S[2].noDates_aval=2;
 
 
-	G[0].S[0].s_d[0].d=22;
+	G[0].S[0].s_d[0].d=23;
 	G[0].S[0].s_d[0].m=10;
 	G[0].S[0].s_d[0].y=2018;
 	G[0].S[1].s_d[0].d=29;
 	G[0].S[1].s_d[0].m=10;
 	G[0].S[1].s_d[0].y=2018;
-	G[0].S[2].s_d[0].d=26;
+	G[0].S[2].s_d[0].d=23;
 	G[0].S[2].s_d[0].m=10;
 	G[0].S[2].s_d[0].y=2018;
 
 
-
-
-	G[0].S[0].rate=1;
-	G[0].S[1].rate=1;
-	G[0].S[2].rate=1;
+	G[0].S[0].rate=200;
+	G[0].S[1].rate=150;
+	G[0].S[2].rate=180;
 
 
 	strcpy(G[1].gName,"sms");
@@ -181,7 +184,7 @@ int main()
 	G[1].S[1].noDates_aval=2;
 
 
-	G[1].S[0].s_d[0].d=25;
+	G[1].S[0].s_d[0].d=23;
 	G[1].S[0].s_d[0].m=10;
 	G[1].S[0].s_d[0].y=2018;
 	G[1].S[1].s_d[0].d=26;
@@ -189,8 +192,8 @@ int main()
 	G[1].S[1].s_d[0].y=2018;
 
 
-	G[1].S[0].rate=1;
-	G[1].S[1].rate=1;
+	G[1].S[0].rate=250;
+	G[1].S[1].rate=100;
 
 
 	strcpy(G[2].gName,"jntu");
@@ -215,12 +218,12 @@ int main()
 	G[2].S[0].dt[1].time[1].m=00;
 	G[2].S[0].noDates_aval=2;
 
-	G[2].S[0].s_d[0].d=30;
+	G[2].S[0].s_d[0].d=23;
 	G[2].S[0].s_d[0].m=10;
 	G[2].S[0].s_d[0].y=2018;
 
 
-	G[2].S[0].rate=1;
+	G[2].S[0].rate=100;
 
 
 
@@ -268,16 +271,16 @@ int main()
 	G[3].S[1].dt[1].time[1].m=00;
 	G[3].S[1].noDates_aval=2;
 
-	G[3].S[0].s_d[0].d=01;
-	G[3].S[0].s_d[0].m=11;
+	G[3].S[0].s_d[0].d=22;
+	G[3].S[0].s_d[0].m=10;
 	G[3].S[0].s_d[0].y=2018;
 	G[3].S[1].s_d[0].d=03;
 	G[3].S[1].s_d[0].m=10;
 	G[3].S[1].s_d[0].y=2018;
 
 
-	G[3].S[0].rate=1;
-	G[3].S[1].rate=1;
+	G[3].S[0].rate=200;
+	G[3].S[1].rate=50;
 
 
 
@@ -286,7 +289,7 @@ int main()
 	strcpy(G[4].state,"new_delhi");
 	strcpy(G[4].S[0].name,"cricket");
 	strcpy(G[4].S[1].name,"football");
-	strcpy(G[4].S[2].name,"swimming");
+	strcpy(G[4].S[2].name,"handball");
 	G[4].noOfSports=3;
 	G[4].S[0].dt[0].d=28;
 	G[4].S[0].dt[0].m=10;
@@ -296,7 +299,7 @@ int main()
 	G[4].S[0].dt[0].time[1].h=14;
 	G[4].S[0].dt[0].time[1].m=00;
 
-	G[4].S[0].dt[1].d=29;
+	G[4].S[0].dt[1].d=22;
 	G[4].S[0].dt[1].m=10;
 	G[4].S[0].dt[1].y=2018;
 	G[4].S[0].dt[1].time[0].h=11;
@@ -357,14 +360,14 @@ int main()
 	G[4].S[1].s_d[0].d=01;
 	G[4].S[1].s_d[0].m=11;
 	G[4].S[1].s_d[0].y=2018;
-	G[4].S[2].s_d[0].d=26;
+	G[4].S[2].s_d[0].d=23;
 	G[4].S[2].s_d[0].m=10;
 	G[4].S[2].s_d[0].y=2018;
 
 
-	G[4].S[0].rate=1;
-	G[4].S[1].rate=1;
-	G[4].S[2].rate=1;
+	G[4].S[0].rate=150;
+	G[4].S[1].rate=180;
+	G[4].S[2].rate=50;
 
 
 
@@ -418,8 +421,8 @@ int main()
 	G[5].S[1].s_d[0].y=2018;
 
 
-	G[5].S[0].rate=1;
-	G[5].S[1].rate=1;
+	G[5].S[0].rate=50;
+	G[5].S[1].rate=150;
 
 	
 	
@@ -478,10 +481,39 @@ int main()
 	//=scanf("%s%d%d%d%d%d%d",sport,&tDate[0].d,&tDate[0].m,&tDate[0].y,&tDate[1].d,&tDate[1].m,&tDate[1].y);
 	//=FindLocationForGameEvents(sport);
 	
-	printf("Enter Sport, date and particular time\n");
-	scanf("%s%d%d%d%d%d",sport,&tempD.d,&tempD.m,&tempD.y,&tempD.time[0].h,&tempD.time[0].m);
-	FindLocationForGame(sport);
+	//=printf("Enter Sport, date and particular time\n");
+	//=scanf("%s%d%d%d%d%d",sport,&tempD.d,&tempD.m,&tempD.y,&tempD.time[0].h,&tempD.time[0].m);
+	//=FindLocationForGame(sport);
 	
+	
+	//=printf("Enter Sport, start date and end date\n");
+	//=scanf("%s%d%d%d%d%d%d",sport,&tDate[0].d,&tDate[0].m,&tDate[0].y,&tDate[1].d,&tDate[1].m,&tDate[1].y);
+	//=FindLocationForGameInTimeRange(sport);
+
+	/*
+	struct ground Ground[10];
+	printf("enter no. of grounds to scan: ");
+	scanf("%d",&n);
+	printf("Enter the ground names: ");
+	for(i=0;i<n;i++)
+		scanf("%s",&Ground[i].name);
+	printf("Enter Sport and date\n");
+	scanf("%s%d%d%d",sport,&tempD.d,&tempD.m,&tempD.y);
+	ClashOfMatches(Ground,tempD,sport,n);*/
+	
+	/*struct ground games[10];
+	printf("enter no. of games to scan: ");
+	scanf("%d",&n);
+	printf("Enter the games names: ");
+	for(i=0;i<n;i++)
+		scanf("%s",&games[i].name);
+	printf("Enter city and date\n");
+	scanf("%s%d%d%d",city,&tempD.d,&tempD.m,&tempD.y);
+	GiveListOfGroundsHavingMinOneMatch(games,tempD,city,n);*/
+	
+	printf("Enter sport, date and time\n");
+	scanf("%s%d%d%d%d%d",sport,&tempD.d,&tempD.m,&tempD.y,&hour,&min);
+	SortOnPriceForAGame(sport,hour,min);
 	
 	for(i=0;i<total;i++)
 	{
@@ -490,7 +522,7 @@ int main()
 	}
 }
 
-getGroundInfo(char city[])
+void getGroundInfo(char city[])
 {
 	int j;	
 	sort();
@@ -505,7 +537,7 @@ getGroundInfo(char city[])
 	}
 }
 
-sort()
+void sort()
 {
 	int i,j,k;
 	for (i = 1; i < total; i++)
@@ -618,14 +650,14 @@ void deleteSport(char GroundName[],char city[],char sport[])
 	}
 }
 
-swap_Ground(int i,int j)
+void swap_Ground(int i,int j)
 {
 	temp=G[i];
 	G[i]=G[j];
 	G[j]=temp;
 }
 
-swap_Sports(int pos_Ground,int i,int j)
+void swap_Sports(int pos_Ground,int i,int j)
 {
 	tempS=G[pos_Ground].S[i];
 	G[pos_Ground].S[i]=G[pos_Ground].S[j];
@@ -718,7 +750,7 @@ void sportWithGround(char sport[])
 	}
 }
 
-sort_gName()
+void sort_gName()
 {
 	int i,j,k;
 	for (i = 1; i < c; i++)
@@ -735,7 +767,7 @@ sort_gName()
 	}
 }
 
-getFixturesinState(char state[])
+void getFixturesinState(char state[])
 {
 		
 	int i,j,k;
@@ -762,7 +794,7 @@ getFixturesinState(char state[])
 	}
 }
 
-sortCGS()
+void sortCGS()
 {
 	int i,j,k;
 	for (i = 1; i < c; i++)
@@ -802,7 +834,7 @@ sortCGS()
 }
 
 
-UniqueSport(char ground[],char city[])
+void UniqueSport(char ground[],char city[])
 {
 	int i,j,k,pos_req,found=0,count=0;
 	c=0;
@@ -848,7 +880,7 @@ UniqueSport(char ground[],char city[])
 }
 
 
-getFixturesinCity(char city[])
+void getFixturesinCity(char city[])
 {
 	int i,j,k,found=0,once=0;
 	c=0;
@@ -917,7 +949,7 @@ sort_g()
 
 }
 
-getFixturesSortedOnDate()
+void getFixturesSortedOnDate()
 {
 	int i,j,k;
 	for(k=0;k<total;k++)
@@ -961,7 +993,7 @@ getFixturesSortedOnDate()
 	 
 }
 
-isAvailable(char sport[])
+void isAvailable(char sport[])
 {
 	int i,j,k,found,once=0;
 	for(i=0;i<total;i++)
@@ -977,7 +1009,7 @@ isAvailable(char sport[])
 					{
 				
 						if((G[i].S[j].dt[k].time[0].h<=tempD.time[0].h)&&(G[i].S[j].dt[k].time[0].m<=tempD.time[0].m)&&\
-						(G[i].S[j].dt[k].time[1].h>tempD.time[0].h)||(G[i].S[j].dt[k].time[1].h==tempD.time[0].h)&&(G[i].S[j].dt[k].time[1].m>tempD.time[0].m))
+						(G[i].S[j].dt[k].time[1].h>tempD.time[0].h)||((G[i].S[j].dt[k].time[1].h==tempD.time[0].h)&&(G[i].S[j].dt[k].time[1].m>tempD.time[0].m)))
 						{
 							printf("%s,%s,%s,%s\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name);	
 							found=1;
@@ -993,7 +1025,7 @@ isAvailable(char sport[])
 		printf("Not Available\n");
 }
 
-FindLocationForGameEvents(char sport[])
+void FindLocationForGameEvents(char sport[])
 {
 	int i,j,k,once=0;
 	for(i=0;i<total;i++)
@@ -1034,7 +1066,7 @@ FindLocationForGameEvents(char sport[])
 }
 
 
-FindLocationForGame(char sport[])
+void FindLocationForGame(char sport[])
 {
 	int i,j,k,found,once=0;
 	for(i=0;i<total;i++)
@@ -1069,9 +1101,155 @@ FindLocationForGame(char sport[])
 		printf("Not Available\n");
 }
 
+void FindLocationForGameInTimeRange(char sport[])
+{
+	int i,j,k,once=0,found;
+	printf("Availability:\n");
+	for(i=0;i<total;i++)
+	{
+		for(j=0;j<G[i].noOfSports;j++)
+		{
+			if(strcmp(G[i].S[j].name,sport)==0)
+			{
+				found=0;
+				for(k=0;k<G[i].S[j].noDates_aval&&found==0;k++)
+				{	
+					if((G[i].S[j].dt[k].d!=G[i].S[j].s_d[0].d)||(G[i].S[j].dt[k].m!=G[i].S[j].s_d[0].m)||(G[i].S[j].dt[k].y!=G[i].S[j].s_d[0].y))
+					{
+						if(((G[i].S[j].dt[k].d>=tDate[0].d)&&(G[i].S[j].dt[k].m>=tDate[0].m)&&(G[i].S[j].dt[k].y>=tDate[0].y)&&(G[i].S[j].dt[k].d<=tDate[1].d)\
+						&&(G[i].S[j].dt[k].m<=tDate[1].m)&&(G[i].S[j].dt[k].y<=tDate[1].y)))	
+						{
+							printf("%s,%s,%s,%s %d-%d-%d\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name,G[i].S[j].dt[k].d,G[i].S[j].dt[k].m,G[i].S[j].dt[k].y);
+							//found=1;
+							once=1;
+						}
+						else if((G[i].S[j].dt[k].y>=tDate[0].y)&&(G[i].S[j].dt[k].y<tDate[1].y))
+						{
+							printf("%s,%s,%s,%s %d-%d-%d\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name,G[i].S[j].dt[k].d,G[i].S[j].dt[k].m,G[i].S[j].dt[k].y);
+							//found=1;
+							once=1;
+						}
+						else if((G[i].S[j].dt[k].y==tDate[0].y)&&(G[i].S[j].dt[k].y==tDate[1].y))
+						{
+							if((G[i].S[j].dt[k].m>=tDate[0].m)&&(G[i].S[j].dt[k].m<tDate[1].m)&&(G[i].S[j].dt[k].d>=tDate[0].d))
+							{
+								printf("%s,%s,%s,%s %d-%d-%d\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name,G[i].S[j].dt[k].d,G[i].S[j].dt[k].m,G[i].S[j].dt[k].y);
+								//found=1;
+								once=1;
+							}
+							else if((G[i].S[j].dt[k].m>tDate[0].m)&&(G[i].S[j].dt[k].d<=tDate[1].d)&&(G[i].S[j].dt[k].m<=tDate[1].m))
+							{
+								printf("%s,%s,%s,%s %d-%d-%d\n",G[i].gName,G[i].city,G[i].state,G[i].S[j].name,G[i].S[j].dt[k].d,G[i].S[j].dt[k].m,G[i].S[j].dt[k].y);
+								//found=1;
+								once=1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	if(once==0)
+		printf("Not Available\n");
+}
 
 
+ClashOfMatches(struct ground Ground[],struct date tempD,char sport[],int n)
+{
+	int i,j,k,p=0;
+	printf("clash is happening among: ");
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<total;j++)
+		{
+			if(strcmp(Ground[i].name,G[j].gName)==0)
+			{
+				for(k=0;k<G[j].noOfSports;k++)
+				{
+					if(strcmp(sport,G[j].S[k].name)==0)
+					{
+						if((tempD.d==G[j].S[k].s_d[0].d)&&(tempD.m==G[j].S[k].s_d[0].m)&&(tempD.y==G[j].S[k].s_d[0].y))
+						{
+							printf("%s  ",Ground[i].name);
+							p++;
+						}
+					}
+				}
+			}
+		}
+	}
+	if(p<2)
+		printf("None");
+	printf("\n");
+}
 
+
+GiveListOfGroundsHavingMinOneMatch(struct ground games[],struct date tempD,char city[],int n)
+{
+	int i,j,k,p=0;
+	printf("Grounds having atleast one match: \n");
+	for(j=0;j<total;j++)
+	{
+		if(strcmp(city,G[j].city)==0)
+		{
+			for(k=0;k<G[j].noOfSports;k++)
+			{	
+				for(i=0;i<n;i++)
+				{
+					if(strcmp(games[i].name,G[j].S[k].name)==0)
+					{
+						if((tempD.d==G[j].S[k].s_d[0].d)&&(tempD.m==G[j].S[k].s_d[0].m)&&(tempD.y==G[j].S[k].s_d[0].y))
+						{
+							printf("%s %s\n",G[j].gName,games[i].name);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+void SortOnPriceForAGame(char sport[],int hour,int min)
+{
+	int i,j,k,found,once=0,c=0;
+	for(i=0;i<total;i++)
+	{
+		found=0;
+		for(j=0;j<G[i].noOfSports&&found==0;j++)
+		{
+			if(strcmp(G[i].S[j].name,sport)==0)
+			{
+				for(k=0;k<G[i].S[j].noDates_aval;k++)
+				{
+					if((tempD.d==G[i].S[j].dt[k].d)&&(tempD.m==G[i].S[j].dt[k].m)&&(tempD.y==G[i].S[j].dt[k].y))
+					{
+						strcpy(req[c].gName,G[i].gName);					
+						req[c].S[0].rate=(((hour*60)+min)/60.0)*G[i].S[j].rate;
+						c++;
+					}
+					
+				}
+			}
+		}
+	}
+	for (i = 1; i < c; i++)
+	{
+  		for (j = 0; j < c - i; j++)
+		{
+ 			if (req[j].S[0].rate>req[j+1].S[0].rate)
+			{
+ 				temp = req[j];
+ 				req[j] = req[j + 1];
+ 				req[j + 1] = temp;
+ 			}
+		}
+	}
+	for(i=0;i<c;i++)
+	{
+		printf("%s %f\n",req[i].gName,req[i].S[0].rate);
+	}
+	
+}
 
 
 
